@@ -34,6 +34,12 @@ Dir["./services/**/*.rb"].each { |f| require(f) }
 Dir["./helpers/**/*.rb"].each  { |f| require(f) }
 Dir["./routes/**/*.rb"].each   { |f| require(f) }
 
+class NullUser
+  def nickname
+    'Unknown'
+  end
+end
+
 require './services/translator'
 translator = Translator.new(:de)
 
@@ -43,7 +49,12 @@ Cuba.plugin Shield::Helpers
 
 Cuba.define do
   on root do
-    render("welcome", { t: t })
+    user = authenticated(User) || NullUser.new
+
+    render("welcome", {
+      t: t,
+      nickname: user.nickname
+    })
   end
 
   on 'login' do
