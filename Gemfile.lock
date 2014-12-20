@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    armor (0.0.3)
     clap (1.0.0)
     cuba (3.3.0)
       rack
@@ -36,6 +37,8 @@ GEM
     sass (3.4.9)
     scrivener (0.3.0)
     scrivener-contrib (1.0.0)
+    shield (2.1.1)
+      armor
     shotgun (0.9)
       rack (>= 1.0)
     thin (1.6.3)
@@ -60,5 +63,6 @@ DEPENDENCIES
   sass
   scrivener
   scrivener-contrib
+  shield
   shotgun
   thin
