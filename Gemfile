@@ -12,7 +12,12 @@ gem 'scrivener'
 gem 'scrivener-contrib'
 gem 'thin'
 gem 'sass'
+gem 'fat'
 
 group :development do
   gem 'shotgun'
+end
+
+group :test do
+  gem 'cutest'
 end
