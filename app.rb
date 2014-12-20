@@ -37,17 +37,19 @@ Dir["./routes/**/*.rb"].each   { |f| require(f) }
 require './services/translator'
 translator = Translator.new(:de)
 
+t = ->(key) { translator.translate(key) }
+
 Cuba.plugin Shield::Helpers
 
 Cuba.define do
   on root do
-    render("welcome", { t: ->(key) { translator.translate(key) } })
+    render("welcome", { t: t })
   end
 
   on 'login' do
     on get do
       render('login', {
-        t: ->(key) { translator.translate(key) },
+        t: t,
         email: nil,
         error_on: {}
       })
@@ -62,7 +64,7 @@ Cuba.define do
         res.redirect '/'
       else
         render('login', {
-          t: ->(key) { translator.translate(key) },
+          t: t,
           email: email,
           error_on: error_on
         })
@@ -73,7 +75,7 @@ Cuba.define do
   on 'register' do
     on get do
       render('register', {
-        t: ->(key) { translator.translate(key) },
+        t: t,
         error_on: {},
         email: nil,
         nickname: nil
@@ -95,7 +97,7 @@ Cuba.define do
         res.write "Hasse joot hemaaht"
       else
         render('register', {
-          t: ->(key) { translator.translate(key) },
+          t: t,
           error_on: error_on,
           email: email,
           nickname: nickname
