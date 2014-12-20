@@ -15,6 +15,7 @@ register:
   password: "Passwort"
   password_repeat: "Passwort Wiederholung"
   submit: "Registrieren"
+  login: "Anmelden"
   errors:
     passwords_not_equal: "Passwörter stimmen nicht überein"
     password_too_short: "Passwort ist zu kurz"
@@ -23,5 +24,6 @@ login:
   email: "Email"
   password: "Passwort"
   submit: "Anmelden"
+  registration: "Registrieren"
   errors:
     wrong_username_or_password: "Benutzername oder Passwort falsch"

@@ -31,5 +31,8 @@
     <input type='password' name='password_repeat' placeholder='•••••'>
   </div>
 
-  <input class="button-primary" value="{{ t['register.submit'] }}" type="submit">
+  <div class='row'>
+    <a href='/login' class='button'>{{ t['register.login'] }}</a>
+    <input class="button-primary" value="{{ t['register.submit'] }}" type="submit">
+  </div>
 </form>
