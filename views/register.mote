@@ -1,19 +1,31 @@
 <form action='/register' method='post'>
+  % if error_on.has_key? 'email'
+  <div class='validation-error'>{{ error_on['email'] }}</div>
+  % end
   <div class='twelve columns'>
     <label for='email'>{{ t['register.email'] }}:</label>
     <input type='email' name='email' placeholder='me@example.com'>
   </div>
 
+  % if error_on.has_key? 'nickname'
+  <div class='validation-error'>{{ error_on['nickname'] }}</div>
+  % end
   <div class='twelve columns'>
     <label for='nickname'>{{ t['register.nick'] }}:</label>
     <input type='text' name='nickname' placeholder='Karfunkel'>
   </div>
 
+  % if error_on.has_key? 'password'
+  <div class='validation-error'>{{ error_on['password'] }}</div>
+  % end
   <div class='twelve columns'>
     <label for='password'>{{ t['register.password'] }}:</label>
     <input type='password' name='password' placeholder='•••••'>
   </div>
 
+  % if error_on.has_key? 'password_repeat'
+  <div class='validation-error'>{{ error_on['password_repeat'] }}</div>
+  % end
   <div class='twelve columns'>
     <label for='password_repeat'>{{ t['register.password_repeat'] }}:</label>
     <input type='password' name='password_repeat' placeholder='•••••'>

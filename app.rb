@@ -57,8 +57,22 @@ Cuba.define do
       render('register', { t: ->(key) { translator.translate(key) } })
     end
 
-    on post, param('email'), param('nick'), param('password'), param('password_repeat') do |email, nick, password, password_repeat|
-      res.write "email: #{email}, password: #{password}"
+    on post, param('email'), param('nickname'), param('password'), param('password_repeat') do |email, nickname, password, password_repeat|
+      error_on = {}
+      error_on['password_repeat'] = 'Passwoerter muessen blabla' unless password == password_repeat
+      error_on['password'] = 'Passwort kurzi' unless password.length > 5
+
+      begin
+        User.create(email: email, password: password, nickname: nickname)
+      rescue Ohm::UniqueIndexViolation
+        error_on['email'] = 'Email belegt'
+      end
+
+      if error_on.empty?
+        res.write "Hasse joot hemaaht"
+      else
+        render('register', { t: ->(key) { translator.translate(key) }, error_on: error_on })
+      end
     end
   end
 end
