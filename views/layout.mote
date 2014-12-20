@@ -2,13 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>App</title>
+    <title>Karfunkel</title>
     <link href="/css/app.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div class="container">
       <div class="row">
-        {{! content }}
+        <aside class="three columns">
+          <img src="/img/karfunkel.svg" alt="Karfunkel Logo">
+          <nav>
+            <ul>
+              <li><a href="">{{ t['general.navigation.back_to_groups'] }}</a></li>
+              <li><a href="">{{ t['general.navigation.welcome'] }}</a></li>
+              <li><a href="">{{ t['general.navigation.journal'] }}</a></li>
+              <li><a href="">{{ t['general.navigation.characters'] }}</a></li>
+              <li><a href="">{{ t['general.navigation.downloads'] }}</a></li>
+              <li><a href="">{{ t['general.navigation.game_master_overview'] }}</a></li>
+              <li><a href="">{{ t['general.navigation.settings'] }}</a></li>
+            </ul>
+          </nav>
+        </aside>
+        <article class="nine columns">
+          {{! content }}
+        </article>
       </div>
     </div>
   </body>

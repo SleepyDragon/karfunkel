@@ -1,0 +1,11 @@
+general:
+  navigation:
+    back_to_groups: "Gruppenübersicht"
+    welcome: "Willkommen"
+    journal: "Tagebuch"
+    downloads: "Downloads"
+    settings: "Einstellungen"
+    characters: "Charaktere"
+    game_master_overview: "Spielleiterschirm"
+welcome:
+  title: "Willkommen, junger Wanderer"

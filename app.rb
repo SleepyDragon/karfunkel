@@ -34,8 +34,11 @@ Dir["./services/**/*.rb"].each { |f| require(f) }
 Dir["./helpers/**/*.rb"].each  { |f| require(f) }
 Dir["./routes/**/*.rb"].each   { |f| require(f) }
 
+require './services/translator'
+translator = Translator.new(:de)
+
 Cuba.define do
   on root do
-    render("home")
+    render("welcome", { t: ->(key) { translator.translate(key) } })
   end
 end
