@@ -9,3 +9,13 @@ general:
     game_master_overview: "Spielleiterschirm"
 welcome:
   title: "Willkommen, junger Wanderer"
+register:
+  email: "Email"
+  nick: "Nick"
+  password: "Passwort"
+  password_repeat: "Passwort Wiederholung"
+  submit: "Registrieren"
+login:
+  email: "Email"
+  password: "Passwort"
+  submit: "Anmelden"

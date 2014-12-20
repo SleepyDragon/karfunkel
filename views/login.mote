@@ -1,0 +1,13 @@
+<form action='/login' method='post'>
+  <div class='twelve columns'>
+    <label for='email'>{{ t['login.email'] }}:</label>
+    <input type='email' name='email' placeholder='me@example.com'>
+  </div>
+
+  <div class='twelve columns'>
+    <label for='email'>{{ t['login.password'] }}:</label>
+    <input type='password' name='password' placeholder='•••••'>
+  </div>
+
+  <input class="button-primary" value="{{ t['login.submit'] }}" type="submit">
+</form>

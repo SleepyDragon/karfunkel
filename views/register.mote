@@ -1,0 +1,23 @@
+<form action='/register' method='post'>
+  <div class='twelve columns'>
+    <label for='email'>{{ t['register.email'] }}:</label>
+    <input type='email' name='email' placeholder='me@example.com'>
+  </div>
+
+  <div class='twelve columns'>
+    <label for='nick'>{{ t['register.nick'] }}:</label>
+    <input type='text' name='nick' placeholder='Karfunkel'>
+  </div>
+
+  <div class='twelve columns'>
+    <label for='password'>{{ t['register.password'] }}:</label>
+    <input type='password' name='password' placeholder='•••••'>
+  </div>
+
+  <div class='twelve columns'>
+    <label for='password_repeat'>{{ t['register.password_repeat'] }}:</label>
+    <input type='password' name='password_repeat' placeholder='•••••'>
+  </div>
+
+  <input class="button-primary" value="{{ t['register.submit'] }}" type="submit">
+</form>

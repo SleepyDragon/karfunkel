@@ -41,4 +41,12 @@ Cuba.define do
   on root do
     render("welcome", { t: ->(key) { translator.translate(key) } })
   end
+
+  on 'login' do
+    render('login', { t: ->(key) { translator.translate(key) } })
+  end
+
+  on 'register' do
+    render('register', { t: ->(key) { translator.translate(key) } })
+  end
 end
