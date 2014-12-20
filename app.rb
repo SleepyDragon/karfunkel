@@ -94,7 +94,7 @@ Cuba.define do
       end
 
       if error_on.empty?
-        res.write "Hasse joot hemaaht"
+        res.redirect '/'
       else
         render('register', {
           t: t,
