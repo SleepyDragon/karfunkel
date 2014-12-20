@@ -58,7 +58,7 @@ Cuba.define do
     on post, param('email'), param('password') do |email, password|
       error_on = {}
 
-      error_on['login'] = 'Wrong u/p' unless login(User, email, password)
+      error_on['login'] = t['login.errors.wrong_username_or_password'] unless login(User, email, password)
 
       if error_on.empty?
         res.redirect '/'
@@ -84,13 +84,13 @@ Cuba.define do
 
     on post, param('email'), param('nickname'), param('password'), param('password_repeat') do |email, nickname, password, password_repeat|
       error_on = {}
-      error_on['password_repeat'] = 'Passwoerter muessen blabla' unless password == password_repeat
-      error_on['password'] = 'Passwort kurzi' unless password.length > 5
+      error_on['password_repeat'] = t['register.errors.passwords_not_equal'] unless password == password_repeat
+      error_on['password'] = t['register.errors.password_too_short'] unless password.length > 5
 
       begin
         User.create(email: email, password: password, nickname: nickname)
       rescue Ohm::UniqueIndexViolation
-        error_on['email'] = 'Email belegt'
+        error_on['email'] = t['register.errors.email_already_taken']
       end
 
       if error_on.empty?
