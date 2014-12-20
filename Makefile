@@ -18,6 +18,9 @@ server:
 smtp:
 	mt 2525
 
+style:
+	bundle exec sass --watch style/app.scss:public/css/app.css
+
 test:
 	env $$(cat .env) bundle exec cutest test/**/*_test.rb
 

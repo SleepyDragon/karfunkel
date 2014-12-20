@@ -11,6 +11,7 @@ gem 'rack-protection'
 gem 'scrivener'
 gem 'scrivener-contrib'
 gem 'thin'
+gem 'sass'
 
 group :development do
   gem 'shotgun'

@@ -29,6 +29,7 @@ GEM
       rack
     redic (1.1.1)
       hiredis
+    sass (3.4.9)
     scrivener (0.3.0)
     scrivener-contrib (1.0.0)
     shotgun (0.9)
@@ -50,6 +51,7 @@ DEPENDENCIES
   ost
   osth
   rack-protection
+  sass
   scrivener
   scrivener-contrib
   shotgun

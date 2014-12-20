@@ -18,6 +18,7 @@ An online system to help pen and paper role play gamers.
 * `make seed`: Runs the seeds file.
 * `make server`: Starts the web server.
 * `make smtp`: Fakes a SMTP server and prints emails to stdout.
+* `make style`: Watch the SCSS stylesheets for changes.
 * `make test`: Runs the test suite.
 * `make workers`: Runs ost workers from workers/ directory.
 
