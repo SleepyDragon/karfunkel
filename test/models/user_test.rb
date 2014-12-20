@@ -1,7 +1,9 @@
-require 'ohm'
-Ohm.redis = Redic.new(ENV['TEST_DATABASE_URL'])
-
+require_relative './helper'
 require './models/user'
+
+setup do
+  Ohm.flush
+end
 
 test 'The user can be saved and retrieved' do
   created_user = User.create(email: 'test@example.com', nickname: 'talisker')
