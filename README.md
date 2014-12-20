@@ -6,7 +6,7 @@ An online system to help pen and paper role play gamers.
 
 * Clone the repository
 * Set up the environment variables to some sensible defaults with `cp .env.example .env`
-* Install [dep](https://github.com/cyx/dep) as we use it to track dependencies `gem install dep`
+* Install [bundler](http://bundler.io) as we use it to keep our environment consistent `gem install bundler`
 * Install everything with `make install`
 * You can now run the app via `make server` and see if everything works by visiting [http://localhost:9393](http://localhost:9393)
 

@@ -1,33 +1,32 @@
 .PHONY: test
 
 install:
-	dep install -f .gems
-	dep install -f .gems.dev
+	bundle install
 
 console:
-	env $$(cat .env) irb -r ./app
+	env $$(cat .env) bundle exec irb -r ./app
 
 secret:
 	ruby -r securerandom -e 'puts SecureRandom.hex(32)'
 
 seed:
-	env $$(cat .env) ruby seeds.rb
+	env $$(cat .env) bundle exec ruby seeds.rb
 
 server:
-	env $$(cat .env) shotgun -o 0.0.0.0
+	env $$(cat .env) bundle exec shotgun -o 0.0.0.0
 
 smtp:
 	mt 2525
 
 test:
-	env $$(cat .env) cutest test/**/*_test.rb
+	env $$(cat .env) bundle exec cutest test/**/*_test.rb
 
 workers-start:
 	for worker in $$(ls workers); do \
-		env $$(cat .env) ost start $$worker; \
+		env $$(cat .env) bundle exec ost start $$worker; \
 	done
 
 workers-stop:
 	for worker in $$(ls workers); do \
-		env $$(cat .env) ost stop $$worker; \
+		env $$(cat .env) bundle exec ost stop $$worker; \
 	done

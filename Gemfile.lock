@@ -1,0 +1,56 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    cuba (3.3.0)
+      rack
+    daemons (1.1.9)
+    eventmachine (1.0.4)
+    hache (1.1.0)
+    hiredis (0.5.2)
+    hmote (1.1.0)
+      hache
+    mailfactory (1.4.0)
+      mime-types (>= 1.13.1)
+    malone (1.0.7)
+      mailfactory (~> 1.4)
+    mime-types (2.4.3)
+    msgpack (0.5.9)
+    nido (0.0.1)
+    ohm (2.0.1)
+      msgpack
+      nido
+      redic
+    ost (1.0.0)
+      nido
+      redic
+    osth (1.1.2)
+    rack (1.6.0)
+    rack-protection (1.5.3)
+      rack
+    redic (1.1.1)
+      hiredis
+    scrivener (0.3.0)
+    scrivener-contrib (1.0.0)
+    shotgun (0.9)
+      rack (>= 1.0)
+    thin (1.6.3)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0)
+      rack (~> 1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  cuba
+  hache
+  hmote
+  malone
+  ohm
+  ost
+  osth
+  rack-protection
+  scrivener
+  scrivener-contrib
+  shotgun
+  thin
