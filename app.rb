@@ -43,10 +43,22 @@ Cuba.define do
   end
 
   on 'login' do
-    render('login', { t: ->(key) { translator.translate(key) } })
+    on get do
+      render('login', { t: ->(key) { translator.translate(key) } })
+    end
+
+    on post, param('email'), param('password') do |email, password|
+      res.write "email: #{email}, password: #{password}"
+    end
   end
 
   on 'register' do
-    render('register', { t: ->(key) { translator.translate(key) } })
+    on get do
+      render('register', { t: ->(key) { translator.translate(key) } })
+    end
+
+    on post, param('email'), param('nick'), param('password'), param('password_repeat') do |email, nick, password, password_repeat|
+      res.write "email: #{email}, password: #{password}"
+    end
   end
 end

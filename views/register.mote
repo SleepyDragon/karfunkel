@@ -5,8 +5,8 @@
   </div>
 
   <div class='twelve columns'>
-    <label for='nick'>{{ t['register.nick'] }}:</label>
-    <input type='text' name='nick' placeholder='Karfunkel'>
+    <label for='nickname'>{{ t['register.nick'] }}:</label>
+    <input type='text' name='nickname' placeholder='Karfunkel'>
   </div>
 
   <div class='twelve columns'>
