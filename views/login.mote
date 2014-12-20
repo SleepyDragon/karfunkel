@@ -1,7 +1,11 @@
 <form action='/login' method='post'>
+  % if error_on.has_key? 'login'
+  <div class='validation-error'>{{ error_on['login'] }}</div>
+  % end
+
   <div class='twelve columns'>
     <label for='email'>{{ t['login.email'] }}:</label>
-    <input type='email' name='email' placeholder='me@example.com'>
+    <input type='email' name='email' placeholder='me@example.com' value='{{ email }}'>
   </div>
 
   <div class='twelve columns'>

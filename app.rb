@@ -37,6 +37,8 @@ Dir["./routes/**/*.rb"].each   { |f| require(f) }
 require './services/translator'
 translator = Translator.new(:de)
 
+Cuba.plugin Shield::Helpers
+
 Cuba.define do
   on root do
     render("welcome", { t: ->(key) { translator.translate(key) } })
@@ -44,11 +46,27 @@ Cuba.define do
 
   on 'login' do
     on get do
-      render('login', { t: ->(key) { translator.translate(key) } })
+      render('login', {
+        t: ->(key) { translator.translate(key) },
+        email: nil,
+        error_on: {}
+      })
     end
 
     on post, param('email'), param('password') do |email, password|
-      res.write "email: #{email}, password: #{password}"
+      error_on = {}
+
+      error_on['login'] = 'Wrong u/p' unless login(User, email, password)
+
+      if error_on.empty?
+        res.redirect '/'
+      else
+        render('login', {
+          t: ->(key) { translator.translate(key) },
+          email: email,
+          error_on: error_on
+        })
+      end
     end
   end
 
