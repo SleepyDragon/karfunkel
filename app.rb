@@ -54,7 +54,12 @@ Cuba.define do
 
   on 'register' do
     on get do
-      render('register', { t: ->(key) { translator.translate(key) } })
+      render('register', {
+        t: ->(key) { translator.translate(key) },
+        error_on: {},
+        email: nil,
+        nickname: nil
+      })
     end
 
     on post, param('email'), param('nickname'), param('password'), param('password_repeat') do |email, nickname, password, password_repeat|
@@ -71,7 +76,12 @@ Cuba.define do
       if error_on.empty?
         res.write "Hasse joot hemaaht"
       else
-        render('register', { t: ->(key) { translator.translate(key) }, error_on: error_on })
+        render('register', {
+          t: ->(key) { translator.translate(key) },
+          error_on: error_on,
+          email: email,
+          nickname: nickname
+        })
       end
     end
   end

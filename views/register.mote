@@ -4,7 +4,7 @@
   % end
   <div class='twelve columns'>
     <label for='email'>{{ t['register.email'] }}:</label>
-    <input type='email' name='email' placeholder='me@example.com'>
+    <input type='email' name='email' placeholder='me@example.com' value="{{ email }}">
   </div>
 
   % if error_on.has_key? 'nickname'
@@ -12,7 +12,7 @@
   % end
   <div class='twelve columns'>
     <label for='nickname'>{{ t['register.nick'] }}:</label>
-    <input type='text' name='nickname' placeholder='Karfunkel'>
+    <input type='text' name='nickname' placeholder='Karfunkel' value="{{ nickname }}">
   </div>
 
   % if error_on.has_key? 'password'
