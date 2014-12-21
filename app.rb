@@ -86,6 +86,11 @@ Cuba.define do
     end
   end
 
+  on post, 'logout' do
+    logout(User)
+    res.redirect '/login'
+  end
+
   on 'register' do
     on get do
       render('register', {

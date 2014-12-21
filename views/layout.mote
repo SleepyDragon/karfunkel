@@ -19,6 +19,11 @@
               <li><a href="">{{ t['general.navigation.downloads'] }}</a></li>
               <li><a href="">{{ t['general.navigation.game_master_overview'] }}</a></li>
               <li><a href="">{{ t['general.navigation.settings'] }}</a></li>
+              <li>
+                <form action='/logout' method='post'>
+                  <input value="{{ t['general.navigation.logout'] }}" type="submit">
+                </form>
+              </li>
             </ul>
           </nav>
         </aside>

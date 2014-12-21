@@ -7,6 +7,7 @@ general:
     settings: "Einstellungen"
     characters: "Charaktere"
     game_master_overview: "Spielleiterschirm"
+    logout: "Abmelden"
 welcome:
   title: "Willkommen"
 register:
