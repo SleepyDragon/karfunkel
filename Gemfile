@@ -21,4 +21,5 @@ end
 
 group :test do
   gem 'cutest'
+  gem 'capybara'
 end
