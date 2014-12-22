@@ -9,12 +9,12 @@
   </div>
 
   <div class='twelve columns'>
-    <label for='email'>{{ t['login.password'] }}:</label>
+    <label for='password'>{{ t['login.password'] }}:</label>
     <input type='password' name='password' placeholder='•••••'>
   </div>
 
   <div class='row'>
     <a href='/register' class='button'>{{ t['login.registration'] }}</a>
-    <input class="button-primary" value="{{ t['login.submit'] }}" type="submit">
+    <input id='submit' class="button-primary" value="{{ t['login.submit'] }}" type="submit">
   </div>
 </form>
