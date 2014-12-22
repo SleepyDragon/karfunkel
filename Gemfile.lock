@@ -27,7 +27,7 @@ GEM
     ost (1.0.0)
       nido
       redic
-    osth (1.1.2)
+    osth (1.3.0)
     rack (1.6.0)
     rack-protection (1.5.3)
       rack
