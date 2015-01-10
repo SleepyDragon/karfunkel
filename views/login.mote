@@ -1,24 +1,33 @@
-<form action='/login' method='post'>
-  % if errors.has_key? :login
-  <div class='validation-error'>
-    % errors[:login].each do |error|
-    {{ app.t("errors.#{error}") }}
-    % end
-  </div>
-  % end
+<div class="hero">
+  <div class="hero-inner">
+    <img src="/img/karfunkel.svg" alt="Logo Image">
+    <h1>{{ app.t('login.title') }}</h1>
+    <form action='/login' method='post'>
+      % if errors.has_key? :login
+      <div class='validation-error'>
+        % errors[:login].each do |error|
+        {{ app.t("errors.#{error}") }}
+        % end
+      </div>
+      % end
 
-  <div class='twelve columns'>
-    <label for='email'>{{ app.t('login.email') }}:</label>
-    <input type='email' name='email' placeholder='me@example.com' value='{{ email }}'>
-  </div>
+      <div class='fields'>
+        <label for='email'>{{ app.t('login.email') }}:</label>
+        <input type='email' name='email' placeholder='me@example.com' value='{{ email }}'>
+      </div>
 
-  <div class='twelve columns'>
-    <label for='password'>{{ app.t('login.password') }}:</label>
-    <input type='password' name='password' placeholder='•••••'>
-  </div>
+      <div class='fields'>
+        <label for='password'>{{ app.t('login.password') }}:</label>
+        <input type='password' name='password' placeholder='•••••'>
+      </div>
 
-  <div class='row'>
-    <a href='/register' class='button'>{{ app.t('login.registration') }}</a>
-    <input id='submit' class="button-primary" value="{{ app.t('login.submit') }}" type="submit">
+      <div class='form-controlls'>
+        <a href='/register' class='button'>{{ app.t('login.registration') }}</a>
+        <input id='submit' class="button-primary" value="{{ app.t('login.submit') }}" type="submit">
+      </div>
+    </form>
   </div>
-</form>
+</div>
+
+Image based on a <a href="https://www.flickr.com/photos/wilwheaton/3347417816">picture</a> by Wil Wheaton (<a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>)
+

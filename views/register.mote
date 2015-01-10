@@ -1,54 +1,63 @@
-<form action='/register' method='post'>
-  % if errors.has_key? :email
-  <div class='validation-error'>
-    % errors[:email].each do |error|
-    {{ app.t("errors.#{error}") }}
-    % end
-  </div>
-  % end
-  <div class='twelve columns'>
-    <label for='email'>{{ app.t('register.email') }}:</label>
-    <input type='email' name='email' placeholder='me@example.com' value="{{ email }}">
-  </div>
+<div class="hero">
+  <div class="hero-inner">
+    <img src="/img/karfunkel.svg" alt="Logo Image">
+    <h1>{{ app.t('register.title') }}</h1>
+    <form action='/register' method='post'>
+      % if errors.has_key? :email
+      <div class='validation-error'>
+        % errors[:email].each do |error|
+        {{ app.t("errors.#{error}") }}
+        % end
+      </div>
+      % end
+      <div class='fields'>
+        <label for='email'>{{ app.t('register.email') }}:</label>
+        <input type='email' name='email' placeholder='me@example.com' value="{{ email }}">
+      </div>
 
-  % if errors.has_key? :nickname
-  <div class='validation-error'>
-    % errors[:nickname].each do |error|
-    {{ app.t("errors.#{error}") }}
-    % end
-  </div>
-  % end
-  <div class='twelve columns'>
-    <label for='nickname'>{{ app.t('register.nick') }}:</label>
-    <input type='text' name='nickname' placeholder='Karfunkel' value="{{ nickname }}">
-  </div>
+      % if errors.has_key? :nickname
+      <div class='validation-error'>
+        % errors[:nickname].each do |error|
+        {{ app.t("errors.#{error}") }}
+        % end
+      </div>
+      % end
+      <div class='fields'>
+        <label for='nickname'>{{ app.t('register.nick') }}:</label>
+        <input type='text' name='nickname' placeholder='Karfunkel' value="{{ nickname }}">
+      </div>
 
-  % if errors.has_key? :password
-  <div class='validation-error'>
-    % errors[:password].each do |error|
-    {{ app.t("errors.#{error}") }}
-    % end
-  </div>
-  % end
-  <div class='twelve columns'>
-    <label for='password'>{{ app.t('register.password') }}:</label>
-    <input type='password' name='password' placeholder='•••••'>
-  </div>
+      % if errors.has_key? :password
+      <div class='validation-error'>
+        % errors[:password].each do |error|
+        {{ app.t("errors.#{error}") }}
+        % end
+      </div>
+      % end
+      <div class='fields'>
+        <label for='password'>{{ app.t('register.password') }}:</label>
+        <input type='password' name='password' placeholder='•••••'>
+      </div>
 
-  % if errors.has_key? :password_confirmation
-  <div class='validation-error'>
-    % errors[:password_confirmation].each do |error|
-    {{ app.t("errors.#{error}") }}
-    % end
-  </div>
-  % end
-  <div class='twelve columns'>
-    <label for='password_confirmation'>{{ app.t('register.password_confirmation') }}:</label>
-    <input type='password' name='password_confirmation' placeholder='•••••'>
-  </div>
+      % if errors.has_key? :password_confirmation
+      <div class='validation-error'>
+        % errors[:password_confirmation].each do |error|
+        {{ app.t("errors.#{error}") }}
+        % end
+      </div>
+      % end
+      <div class='fields'>
+        <label for='password_confirmation'>{{ app.t('register.password_confirmation') }}:</label>
+        <input type='password' name='password_confirmation' placeholder='•••••'>
+      </div>
 
-  <div class='row'>
-    <a href='/login' class='button'>{{ app.t('register.login') }}</a>
-    <input class="button-primary" value="{{ app.t('register.submit') }}" type="submit">
+      <div class='form-controlls'>
+        <a href='/login' class='button'>{{ app.t('register.login') }}</a>
+        <input class="button-primary" value="{{ app.t('register.submit') }}" type="submit">
+      </div>
+    </form>
   </div>
-</form>
+</div>
+
+Image based on a <a href="https://www.flickr.com/photos/wilwheaton/3347417816">picture</a> by Wil Wheaton (<a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>)
+

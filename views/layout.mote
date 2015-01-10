@@ -6,33 +6,30 @@
     <link href="/css/app.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <aside class="three columns">
-          <img src="/img/karfunkel.svg" alt="Karfunkel Logo">
-          % if app.logged_in?
-            <nav>
-              <ul>
-                <li><a href="">{{ app.t('general.navigation.back_to_groups') }}</a></li>
-                <li><a href="">{{ app.t('general.navigation.welcome') }}</a></li>
-                <li><a href="">{{ app.t('general.navigation.journal') }}</a></li>
-                <li><a href="">{{ app.t('general.navigation.characters') }}</a></li>
-                <li><a href="">{{ app.t('general.navigation.downloads') }}</a></li>
-                <li><a href="">{{ app.t('general.navigation.game_master_overview') }}</a></li>
-                <li><a href="">{{ app.t('general.navigation.settings') }}</a></li>
-                <li>
-                  <form action='/logout' method='post'>
-                    <input value="{{ app.t('general.navigation.logout') }}" type="submit">
-                  </form>
-                </li>
-              </ul>
-            </nav>
-          % end
+    <section>
+      % if app.logged_in?
+      <header>
+        {{! app.partial('top-nav') }}
+      </header>
+      % end
+
+      % if app.logged_in? # will later be: Game selected
+      <div class="two-columns">
+        <aside>
+          {{! app.partial('side-nav') }}
         </aside>
-        <article class="nine columns">
+        <article>
           {{! content }}
         </article>
       </div>
-    </div>
+      % else
+      <div class="one-column">
+        <article>
+          {{! content }}
+        </article>
+      </div>
+      % end
+
+    </section>
   </body>
 </html>
