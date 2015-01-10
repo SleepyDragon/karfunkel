@@ -11,6 +11,7 @@ general:
 welcome:
   title: "Willkommen"
 register:
+  title: "Willkommen bei Karfunkel"
   email: "Email"
   nick: "Nick"
   password: "Passwort"
@@ -18,6 +19,7 @@ register:
   submit: "Registrieren"
   login: "Anmelden"
 login:
+  title: "Willkommen bei Karfunkel"
   email: "Email"
   password: "Passwort"
   submit: "Anmelden"

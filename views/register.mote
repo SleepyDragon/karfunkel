@@ -1,7 +1,7 @@
 <div class="hero">
   <div class="hero-inner">
     <img src="/img/karfunkel.svg" alt="Logo Image">
-    <h1>Willkommen bei Karfunkel</h1>
+    <h1>{{ app.t('register.title') }}</h1>
     <form action='/register' method='post'>
       % if errors.has_key? :email
       <div class='validation-error'>
