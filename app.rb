@@ -43,11 +43,8 @@ Cuba.plugin SessionHelper
 Cuba.define do
   on root do
     res.status = 401 unless authenticated(User)
-    user = authenticated(User) || NullUser.new
 
-    render("welcome", {
-      nickname: user.nickname
-    })
+    render('welcome')
   end
 
   on 'login' do
