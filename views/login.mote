@@ -1,0 +1,20 @@
+<form action='/login' method='post'>
+  % if error_on.has_key? 'login'
+  <div class='validation-error'>{{ error_on['login'] }}</div>
+  % end
+
+  <div class='twelve columns'>
+    <label for='email'>{{ app.t('login.email') }}:</label>
+    <input type='email' name='email' placeholder='me@example.com' value='{{ email }}'>
+  </div>
+
+  <div class='twelve columns'>
+    <label for='password'>{{ app.t('login.password') }}:</label>
+    <input type='password' name='password' placeholder='•••••'>
+  </div>
+
+  <div class='row'>
+    <a href='/register' class='button'>{{ app.t('login.registration') }}</a>
+    <input id='submit' class="button-primary" value="{{ app.t('login.submit') }}" type="submit">
+  </div>
+</form>

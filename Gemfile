@@ -13,6 +13,7 @@ gem 'scrivener-contrib'
 gem 'thin'
 gem 'sass'
 gem 'fat'
+gem 'shield'
 
 group :development do
   gem 'shotgun'
@@ -20,4 +21,5 @@ end
 
 group :test do
   gem 'cutest'
+  gem 'capybara'
 end

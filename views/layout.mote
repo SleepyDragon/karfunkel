@@ -10,17 +10,24 @@
       <div class="row">
         <aside class="three columns">
           <img src="/img/karfunkel.svg" alt="Karfunkel Logo">
-          <nav>
-            <ul>
-              <li><a href="">{{ t['general.navigation.back_to_groups'] }}</a></li>
-              <li><a href="">{{ t['general.navigation.welcome'] }}</a></li>
-              <li><a href="">{{ t['general.navigation.journal'] }}</a></li>
-              <li><a href="">{{ t['general.navigation.characters'] }}</a></li>
-              <li><a href="">{{ t['general.navigation.downloads'] }}</a></li>
-              <li><a href="">{{ t['general.navigation.game_master_overview'] }}</a></li>
-              <li><a href="">{{ t['general.navigation.settings'] }}</a></li>
-            </ul>
-          </nav>
+          % if app.logged_in?
+            <nav>
+              <ul>
+                <li><a href="">{{ app.t('general.navigation.back_to_groups') }}</a></li>
+                <li><a href="">{{ app.t('general.navigation.welcome') }}</a></li>
+                <li><a href="">{{ app.t('general.navigation.journal') }}</a></li>
+                <li><a href="">{{ app.t('general.navigation.characters') }}</a></li>
+                <li><a href="">{{ app.t('general.navigation.downloads') }}</a></li>
+                <li><a href="">{{ app.t('general.navigation.game_master_overview') }}</a></li>
+                <li><a href="">{{ app.t('general.navigation.settings') }}</a></li>
+                <li>
+                  <form action='/logout' method='post'>
+                    <input value="{{ app.t('general.navigation.logout') }}" type="submit">
+                  </form>
+                </li>
+              </ul>
+            </nav>
+          % end
         </aside>
         <article class="nine columns">
           {{! content }}

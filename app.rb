@@ -8,6 +8,7 @@ require "ost"
 require "rack/protection"
 require "scrivener"
 require "scrivener/contrib"
+require "shield"
 
 APP_KEY = ENV.fetch("APP_KEY")
 APP_SECRET = ENV.fetch("APP_SECRET")
@@ -26,6 +27,7 @@ Cuba.use(Rack::Session::Cookie, key: APP_KEY, secret: APP_SECRET, http_only: tru
 Cuba.use(Rack::Static, urls: %w(/js /css /img), root: "./public")
 Cuba.use(Rack::Protection, except: :http_origin)
 Cuba.use(Rack::Protection::RemoteReferrer)
+Cuba.use(Shield::Middleware, "/login")
 
 Dir["./lib/**/*.rb"].each      { |f| require(f) }
 Dir["./models/**/*.rb"].each   { |f| require(f) }
@@ -34,11 +36,13 @@ Dir["./services/**/*.rb"].each { |f| require(f) }
 Dir["./helpers/**/*.rb"].each  { |f| require(f) }
 Dir["./routes/**/*.rb"].each   { |f| require(f) }
 
-require './services/translator'
-translator = Translator.new(:de)
+Cuba.plugin Shield::Helpers
+Cuba.plugin TranslationsHelper
+Cuba.plugin SessionHelper
 
 Cuba.define do
-  on root do
-    render("welcome", { t: ->(key) { translator.translate(key) } })
-  end
+  on(root)       { run WelcomeRoutes }
+  on('login')    { run LoginRoutes }
+  on('logout')   { run LogoutRoutes }
+  on('register') { run RegisterRoutes }
 end

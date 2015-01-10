@@ -1,1 +1,1 @@
-<h1>{{ t['welcome.title'] }}</h1>
+<h1>{{ app.t('welcome.title') }}, {{ app.current_user.nickname }}</h1>

@@ -15,6 +15,9 @@ seed:
 server:
 	env $$(cat .env) bundle exec shotgun -o 0.0.0.0
 
+redis:
+	redis-server redis.conf
+
 smtp:
 	mt 2525
 

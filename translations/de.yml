@@ -7,5 +7,24 @@ general:
     settings: "Einstellungen"
     characters: "Charaktere"
     game_master_overview: "Spielleiterschirm"
+    logout: "Abmelden"
 welcome:
-  title: "Willkommen, junger Wanderer"
+  title: "Willkommen"
+register:
+  email: "Email"
+  nick: "Nick"
+  password: "Passwort"
+  password_repeat: "Passwort Wiederholung"
+  submit: "Registrieren"
+  login: "Anmelden"
+  errors:
+    passwords_not_equal: "Passwörter stimmen nicht überein"
+    password_too_short: "Passwort ist zu kurz"
+    email_already_taken: "Email Adresse ist schon belegt"
+login:
+  email: "Email"
+  password: "Passwort"
+  submit: "Anmelden"
+  registration: "Registrieren"
+  errors:
+    wrong_username_or_password: "Benutzername oder Passwort falsch"
