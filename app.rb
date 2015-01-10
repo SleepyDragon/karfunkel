@@ -9,6 +9,7 @@ require "rack/protection"
 require "scrivener"
 require "scrivener/contrib"
 require "shield"
+require './services/translator'
 
 APP_KEY = ENV.fetch("APP_KEY")
 APP_SECRET = ENV.fetch("APP_SECRET")
@@ -42,11 +43,6 @@ class NullUser
   end
 end
 
-require './services/translator'
-translator = Translator.new(:de)
-
-t = ->(key) { translator.translate(key) }
-
 Cuba.plugin Shield::Helpers
 
 Cuba.define do
@@ -54,12 +50,19 @@ Cuba.define do
     User[session.fetch('User')]
   end
 
+  def t(key)
+    translator.translate(key)
+  end
+
+  def translator
+    @translator ||= Translator.new(:de)
+  end
+
   on root do
     res.status = 401 unless authenticated(User)
     user = authenticated(User) || NullUser.new
 
     render("welcome", {
-      t: t,
       nickname: user.nickname
     })
   end
@@ -67,7 +70,6 @@ Cuba.define do
   on 'login' do
     on get do
       render('login', {
-        t: t,
         email: nil,
         error_on: {}
       })
@@ -76,13 +78,12 @@ Cuba.define do
     on post, param('email'), param('password') do |email, password|
       error_on = {}
 
-      error_on['login'] = t['login.errors.wrong_username_or_password'] unless login(User, email, password)
+      error_on['login'] = t('login.errors.wrong_username_or_password') unless login(User, email, password)
 
       if error_on.empty?
         res.redirect '/'
       else
         render('login', {
-          t: t,
           email: email,
           error_on: error_on
         })
@@ -98,7 +99,6 @@ Cuba.define do
   on 'register' do
     on get do
       render('register', {
-        t: t,
         error_on: {},
         email: nil,
         nickname: nil
@@ -107,20 +107,19 @@ Cuba.define do
 
     on post, param('email'), param('nickname'), param('password'), param('password_repeat') do |email, nickname, password, password_repeat|
       error_on = {}
-      error_on['password_repeat'] = t['register.errors.passwords_not_equal'] unless password == password_repeat
-      error_on['password'] = t['register.errors.password_too_short'] unless password.length > 5
+      error_on['password_repeat'] = t('register.errors.passwords_not_equal') unless password == password_repeat
+      error_on['password'] = t('register.errors.password_too_short') unless password.length > 5
 
       begin
         User.create(email: email, password: password, nickname: nickname)
       rescue Ohm::UniqueIndexViolation
-        error_on['email'] = t['register.errors.email_already_taken']
+        error_on['email'] = t('register.errors.email_already_taken')
       end
 
       if error_on.empty?
         res.redirect '/'
       else
         render('register', {
-          t: t,
           error_on: error_on,
           email: email,
           nickname: nickname

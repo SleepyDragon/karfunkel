@@ -13,16 +13,16 @@
           % if app.current_user
             <nav>
               <ul>
-                <li><a href="">{{ t['general.navigation.back_to_groups'] }}</a></li>
-                <li><a href="">{{ t['general.navigation.welcome'] }}</a></li>
-                <li><a href="">{{ t['general.navigation.journal'] }}</a></li>
-                <li><a href="">{{ t['general.navigation.characters'] }}</a></li>
-                <li><a href="">{{ t['general.navigation.downloads'] }}</a></li>
-                <li><a href="">{{ t['general.navigation.game_master_overview'] }}</a></li>
-                <li><a href="">{{ t['general.navigation.settings'] }}</a></li>
+                <li><a href="">{{ app.t('general.navigation.back_to_groups') }}</a></li>
+                <li><a href="">{{ app.t('general.navigation.welcome') }}</a></li>
+                <li><a href="">{{ app.t('general.navigation.journal') }}</a></li>
+                <li><a href="">{{ app.t('general.navigation.characters') }}</a></li>
+                <li><a href="">{{ app.t('general.navigation.downloads') }}</a></li>
+                <li><a href="">{{ app.t('general.navigation.game_master_overview') }}</a></li>
+                <li><a href="">{{ app.t('general.navigation.settings') }}</a></li>
                 <li>
                   <form action='/logout' method='post'>
-                    <input value="{{ t['general.navigation.logout'] }}" type="submit">
+                    <input value="{{ app.t('general.navigation.logout') }}" type="submit">
                   </form>
                 </li>
               </ul>

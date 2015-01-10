@@ -4,17 +4,17 @@
   % end
 
   <div class='twelve columns'>
-    <label for='email'>{{ t['login.email'] }}:</label>
+    <label for='email'>{{ app.t('login.email') }}:</label>
     <input type='email' name='email' placeholder='me@example.com' value='{{ email }}'>
   </div>
 
   <div class='twelve columns'>
-    <label for='password'>{{ t['login.password'] }}:</label>
+    <label for='password'>{{ app.t('login.password') }}:</label>
     <input type='password' name='password' placeholder='•••••'>
   </div>
 
   <div class='row'>
-    <a href='/register' class='button'>{{ t['login.registration'] }}</a>
-    <input id='submit' class="button-primary" value="{{ t['login.submit'] }}" type="submit">
+    <a href='/register' class='button'>{{ app.t('login.registration') }}</a>
+    <input id='submit' class="button-primary" value="{{ app.t('login.submit') }}" type="submit">
   </div>
 </form>
