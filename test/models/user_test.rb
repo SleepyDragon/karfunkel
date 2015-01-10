@@ -1,9 +1,4 @@
-require_relative './helper'
-require './models/user'
-
-setup do
-  Ohm.flush
-end
+require_relative '../helper.rb'
 
 test 'The user can be saved and retrieved' do
   created_user = User.create(email: 'test@example.com', nickname: 'talisker')

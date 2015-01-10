@@ -1,4 +1,4 @@
-require './services/translator'
+require_relative '../helper.rb'
 
 test "Translate pirate welcome message" do
   translator = Translator.new(:pirate, translations_folder: 'test/fixtures/translations')

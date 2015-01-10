@@ -1,9 +1,7 @@
-require 'cuba/capybara'
-require './app'
+require_relative '../helper.rb'
 
 scope do
   setup do
-    Ohm.flush
     User.create(email: 'test@example.com', nickname: 'talisker', password: 'verysecret')
   end
 

@@ -1,5 +1,4 @@
-require 'cuba/capybara'
-require './app'
+require_relative '../helper.rb'
 
 scope do
   setup do
