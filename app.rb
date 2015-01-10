@@ -43,7 +43,7 @@ Cuba.plugin SessionHelper
 
 Cuba.define do
   on(root)       { run WelcomeRoutes     }
-  on('groups')   { run ChooseGroupRoutes }
+  on('groups')   { run GroupsRoutes      }
   on('login')    { run LoginRoutes       }
   on('logout')   { run LogoutRoutes      }
   on('register') { run RegisterRoutes    }

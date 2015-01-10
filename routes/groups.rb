@@ -1,7 +1,7 @@
-class ChooseGroupRoutes < Cuba
+class GroupsRoutes < Cuba
 end
 
-ChooseGroupRoutes.define do
+GroupsRoutes.define do
   on get do
     render('groups', {
       groups: Group.all.to_a
