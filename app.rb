@@ -37,20 +37,10 @@ Dir["./helpers/**/*.rb"].each  { |f| require(f) }
 Dir["./routes/**/*.rb"].each   { |f| require(f) }
 
 Cuba.plugin Shield::Helpers
+Cuba.plugin TranslationsHelper
+Cuba.plugin SessionHelper
 
 Cuba.define do
-  def current_user
-    User[session.fetch('User')] || NullUser.new
-  end
-
-  def t(key)
-    translator.translate(key)
-  end
-
-  def translator
-    @translator ||= Translator.new(:de)
-  end
-
   on root do
     res.status = 401 unless authenticated(User)
     user = authenticated(User) || NullUser.new
