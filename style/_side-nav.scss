@@ -1,0 +1,15 @@
+nav.side {
+  ul {
+    li {
+      border-bottom: 1px solid transparentize($base-link-color, .8);
+      display: block;
+      margin-right: $base-spacing;
+      outline: none;
+      padding: $base-spacing / 2 0;
+
+      &:last-child {
+        margin-bottom: $base-spacing;
+      }
+    }
+  }
+}

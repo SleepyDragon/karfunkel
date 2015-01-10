@@ -1,0 +1,23 @@
+<div class="centered-navigation-wrapper">
+  <a href="/" class="mobile-logo">
+    <img src="/img/karfunkel.svg" alt="Karfunkel Logo">
+  </a>
+  <a href="/" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">Karfunkel</a>
+  <nav role="navigation">
+    <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+      <li class="nav-link">Spielgruppe: Peergroup</a>
+      <li class="nav-link"><a href="">{{ app.t('general.navigation.back_to_groups') }}</a></li>
+      <li class="nav-link logo">
+        <a href="/" class="logo">
+          <img src="/img/karfunkel.svg" alt="Karfunkel Logo">
+        </a>
+      </li>
+      <li class="nav-link"><a href="">{{ app.t('general.navigation.settings') }}</a></li>
+      <li class="nav-link">
+        <form action='/logout' method='post'>
+          <input value="{{ app.t('general.navigation.logout') }}" type="submit">
+        </form>
+      </li>
+    </ul>
+  </nav>
+</div>

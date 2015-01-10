@@ -1,3 +1,36 @@
 @import "bourbon/bourbon";
 @import "base/base";
 @import "neat/neat";
+
+// Layout
+section {
+  @include outer-container;
+
+  header {
+    @include row();
+  }
+
+  .two-columns {
+    @include row();
+
+    aside {
+      @include span-columns(3);
+    }
+
+    article {
+      @include span-columns(9);
+    }
+  }
+
+  .one-column {
+    @include row();
+
+    article {
+      @include span-columns(12);
+    }
+  }
+}
+
+@import "top-nav";
+@import "side-nav";
+@import "flash";

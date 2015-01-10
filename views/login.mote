@@ -7,18 +7,12 @@
   </div>
   % end
 
-  <div class='twelve columns'>
-    <label for='email'>{{ app.t('login.email') }}:</label>
-    <input type='email' name='email' placeholder='me@example.com' value='{{ email }}'>
-  </div>
+  <label for='email'>{{ app.t('login.email') }}:</label>
+  <input type='email' name='email' placeholder='me@example.com' value='{{ email }}'>
 
-  <div class='twelve columns'>
-    <label for='password'>{{ app.t('login.password') }}:</label>
-    <input type='password' name='password' placeholder='•••••'>
-  </div>
+  <label for='password'>{{ app.t('login.password') }}:</label>
+  <input type='password' name='password' placeholder='•••••'>
 
-  <div class='row'>
-    <a href='/register' class='button'>{{ app.t('login.registration') }}</a>
-    <input id='submit' class="button-primary" value="{{ app.t('login.submit') }}" type="submit">
-  </div>
+  <a href='/register' class='button'>{{ app.t('login.registration') }}</a>
+  <input id='submit' class="button-primary" value="{{ app.t('login.submit') }}" type="submit">
 </form>

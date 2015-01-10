@@ -1,6 +1,6 @@
 general:
   navigation:
-    back_to_groups: "Gruppenübersicht"
+    back_to_groups: "Gruppe wechseln"
     welcome: "Willkommen"
     journal: "Tagebuch"
     downloads: "Downloads"
@@ -25,6 +25,6 @@ login:
 errors:
   not_email: "Keine gültige Email Adresse."
   not_confirmed: "Passwörter stimmen nicht überein."
-  too_short: "Passwort ist zu kurz."
+  too_short: "Passwort ist zu kurz (mindestens 5 Zeichen)."
   email_already_taken: "Email Adresse ist schon belegt."
   wrong_username_or_password: "Benutzername oder Passwort falsch"
