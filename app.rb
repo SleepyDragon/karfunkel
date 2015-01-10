@@ -31,6 +31,7 @@ Cuba.use(Shield::Middleware, "/login")
 
 Dir["./lib/**/*.rb"].each      { |f| require(f) }
 Dir["./models/**/*.rb"].each   { |f| require(f) }
+Dir["./validations/**/*.rb"].each { |f| require(f) }
 Dir["./filters/**/*.rb"].each  { |f| require(f) }
 Dir["./services/**/*.rb"].each { |f| require(f) }
 Dir["./helpers/**/*.rb"].each  { |f| require(f) }

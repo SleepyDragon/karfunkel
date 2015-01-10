@@ -6,7 +6,7 @@ scope do
     fill_in 'email', with: 'lagavulin@whiskey.de'
     fill_in 'nickname', with: 'lagavulin'
     fill_in 'password', with: 'ilikewhiskey'
-    fill_in 'password_repeat', with: 'ilikewhiskey'
+    fill_in 'password_confirmation', with: 'ilikewhiskey'
     click_button 'Registrieren'
 
     assert_equal current_path, '/'
@@ -18,13 +18,13 @@ scope do
     fill_in 'email', with: 'oban@whiskey.de'
     fill_in 'nickname', with: 'oban'
     fill_in 'password', with: 'ilikewhiskey'
-    fill_in 'password_repeat', with: 'wrongrepeat'
+    fill_in 'password_confirmation', with: 'wrongrepeat'
     click_button 'Registrieren'
 
     fill_in 'email', with: 'oban@whiskey.de'
     fill_in 'nickname', with: 'oban'
     fill_in 'password', with: 'ilikewhiskey'
-    fill_in 'password_repeat', with: 'ilikewhiskey'
+    fill_in 'password_confirmation', with: 'ilikewhiskey'
     click_button 'Registrieren'
 
     assert_equal current_path, '/'
