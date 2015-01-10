@@ -10,7 +10,7 @@
       <div class="row">
         <aside class="three columns">
           <img src="/img/karfunkel.svg" alt="Karfunkel Logo">
-          % if app.current_user
+          % if app.logged_in?
             <nav>
               <ul>
                 <li><a href="">{{ app.t('general.navigation.back_to_groups') }}</a></li>
