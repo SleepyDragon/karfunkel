@@ -97,6 +97,7 @@ Cuba.define do
       end
 
       if error_on.empty?
+        login(User, email, password)
         res.redirect '/'
       else
         render('register', {
