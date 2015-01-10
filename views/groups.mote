@@ -1,1 +1,7 @@
-Hello
+<div class="groups">
+  % groups.each do |group|
+  <div class="group">
+    <h2>{{ group.name }}</h2>
+  </div>
+  % end
+</div>
