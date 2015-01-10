@@ -41,73 +41,8 @@ Cuba.plugin TranslationsHelper
 Cuba.plugin SessionHelper
 
 Cuba.define do
-  on root do
-    res.status = 401 unless authenticated(User)
-
-    render('welcome')
-  end
-
-  on 'login' do
-    on get do
-      render('login', {
-        email: nil,
-        error_on: {}
-      })
-    end
-
-    on post, param('email'), param('password') do |email, password|
-      error_on = {}
-
-      error_on['login'] = t('login.errors.wrong_username_or_password') unless login(User, email, password)
-
-      if error_on.empty?
-        res.redirect '/'
-      else
-        render('login', {
-          email: email,
-          error_on: error_on
-        })
-      end
-    end
-  end
-
-  on post, 'logout' do
-    logout(User)
-    res.redirect '/login'
-  end
-
-  on 'register' do
-    on get do
-      render('register', {
-        error_on: {},
-        email: nil,
-        nickname: nil
-      })
-    end
-
-    on post, param('email'), param('nickname'), param('password'), param('password_repeat') do |email, nickname, password, password_repeat|
-      error_on = {}
-      error_on['password_repeat'] = t('register.errors.passwords_not_equal') unless password == password_repeat
-      error_on['password'] = t('register.errors.password_too_short') unless password.length > 5
-
-      if error_on.empty?
-        begin
-          User.create(email: email, password: password, nickname: nickname)
-        rescue Ohm::UniqueIndexViolation
-          error_on['email'] = t('register.errors.email_already_taken')
-        end
-      end
-
-      if error_on.empty?
-        login(User, email, password)
-        res.redirect '/'
-      else
-        render('register', {
-          error_on: error_on,
-          email: email,
-          nickname: nickname
-        })
-      end
-    end
-  end
+  on(root)       { run WelcomeRoutes }
+  on('login')    { run LoginRoutes }
+  on('logout')   { run LogoutRoutes }
+  on('register') { run RegisterRoutes }
 end
