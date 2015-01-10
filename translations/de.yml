@@ -14,17 +14,17 @@ register:
   email: "Email"
   nick: "Nick"
   password: "Passwort"
-  password_repeat: "Passwort Wiederholung"
+  password_confirmation: "Passwort Wiederholung"
   submit: "Registrieren"
   login: "Anmelden"
-  errors:
-    passwords_not_equal: "Passwörter stimmen nicht überein"
-    password_too_short: "Passwort ist zu kurz"
-    email_already_taken: "Email Adresse ist schon belegt"
 login:
   email: "Email"
   password: "Passwort"
   submit: "Anmelden"
   registration: "Registrieren"
-  errors:
-    wrong_username_or_password: "Benutzername oder Passwort falsch"
+errors:
+  not_email: "Keine gültige Email Adresse."
+  not_confirmed: "Passwörter stimmen nicht überein."
+  too_short: "Passwort ist zu kurz."
+  email_already_taken: "Email Adresse ist schon belegt."
+  wrong_username_or_password: "Benutzername oder Passwort falsch"

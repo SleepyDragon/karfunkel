@@ -4,34 +4,34 @@ end
 RegisterRoutes.define do
   on get do
     render('register', {
-      error_on: {},
+      errors: {},
       email: nil,
       nickname: nil
     })
   end
 
-  on post, param('email'), param('nickname'), param('password'), param('password_repeat') do |email, nickname, password, password_repeat|
-    error_on = {}
-    error_on['password_repeat'] = t('register.errors.passwords_not_equal') unless password == password_repeat
-    error_on['password'] = t('register.errors.password_too_short') unless password.length > 5
+  on post, param('email'), param('nickname'), param('password'), param('password_confirmation') do |email, nickname, password, password_confirmation|
+    registration = RegisterValidation.new(
+      email: email,
+      nickname: nickname,
+      password: password,
+      password_confirmation: password_confirmation
+    )
 
-    if error_on.empty?
+    if registration.valid?
       begin
-        User.create(email: email, password: password, nickname: nickname)
+        User.create(registration.slice(:email, :nickname, :password))
+        login(User, registration.email, registration.password)
+        res.redirect '/'
       rescue Ohm::UniqueIndexViolation
-        error_on['email'] = t('register.errors.email_already_taken')
+        registration.errors[:email].push(:email_already_taken)
       end
     end
 
-    if error_on.empty?
-      login(User, email, password)
-      res.redirect '/'
-    else
-      render('register', {
-        error_on: error_on,
-        email: email,
-        nickname: nickname
-      })
-    end
+    render('register', {
+      errors: registration.errors,
+      email: email,
+      nickname: nickname
+    })
   end
 end

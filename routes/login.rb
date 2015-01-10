@@ -5,21 +5,19 @@ LoginRoutes.define do
   on get do
     render('login', {
       email: nil,
-      error_on: {}
+      errors: {}
     })
   end
 
   on post, param('email'), param('password') do |email, password|
-    error_on = {}
-
-    error_on['login'] = t('login.errors.wrong_username_or_password') unless login(User, email, password)
-
-    if error_on.empty?
+    if login(User, email, password)
       res.redirect '/'
     else
       render('login', {
         email: email,
-        error_on: error_on
+        errors: {
+          login: [:wrong_username_or_password]
+        }
       })
     end
   end
