@@ -50,6 +50,10 @@ t = ->(key) { translator.translate(key) }
 Cuba.plugin Shield::Helpers
 
 Cuba.define do
+  def current_user
+    User[session.fetch('User')]
+  end
+
   on root do
     res.status = 401 unless authenticated(User)
     user = authenticated(User) || NullUser.new
