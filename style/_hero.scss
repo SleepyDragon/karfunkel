@@ -1,0 +1,59 @@
+.hero {
+  $hero-color: white;
+  $hero-image: '/img/hero-unit.png';
+
+  background-image: url($hero-image);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 3em;
+
+  img {
+    height: 8em;
+    margin-bottom: 1em;
+  }
+
+  .hero-inner {
+    @include outer-container;
+    @include clearfix;
+    color: $hero-color;
+    margin: auto;
+    padding: 3.5em;
+    text-align: center;
+
+    h1 {
+      text-align: center;
+      font-size: 1.6em;
+      margin-bottom: .5em;
+
+      @include media($large-screen) {
+        font-size: 1.8em;
+      }
+    }
+
+    @include media($large-screen) {
+      .fields {
+        @include row();
+
+        label {
+          @include span-columns(3);
+          @include shift(1);
+          text-align: right;
+          position: relative;
+          top: 6px;
+        }
+
+        input[type=email], input[type=password] {
+          @include span-columns(5);
+        }
+      }
+    }
+
+    .form-controlls {
+      a {
+        @extend %button;
+        @include appearance(none);
+      }
+    }
+  }
+}

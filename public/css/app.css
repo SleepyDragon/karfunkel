@@ -4,7 +4,7 @@
  * Copyright 2013–2014 thoughtbot, inc.
  * MIT License */
 button,
-input[type="submit"] {
+input[type="submit"], .hero .hero-inner .form-controlls a {
   -webkit-font-smoothing: antialiased;
   background-color: #477DCA;
   border-radius: 3px;
@@ -16,11 +16,11 @@ input[type="submit"] {
   padding: 0.75em 1em;
   text-decoration: none; }
   button:hover,
-  input[type="submit"]:hover {
+  input[type="submit"]:hover, .hero .hero-inner .form-controlls a:hover {
     background-color: #2c5999;
     color: white; }
   button:disabled,
-  input[type="submit"]:disabled {
+  input[type="submit"]:disabled, .hero .hero-inner .form-controlls a:disabled {
     cursor: not-allowed;
     opacity: 0.5; }
 
@@ -414,5 +414,69 @@ nav.side ul li {
     text-decoration: none; }
     .validation-error a:hover {
       color: #110203; }
+
+.hero {
+  background-image: url("/img/hero-unit.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 3em; }
+  .hero img {
+    height: 8em;
+    margin-bottom: 1em; }
+  .hero .hero-inner {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    margin: auto;
+    padding: 3.5em;
+    text-align: center; }
+    .hero .hero-inner::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .hero .hero-inner::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .hero .hero-inner h1 {
+      text-align: center;
+      font-size: 1.6em;
+      margin-bottom: .5em; }
+      @media screen and (min-width: 53.75em) {
+        .hero .hero-inner h1 {
+          font-size: 1.8em; } }
+    @media screen and (min-width: 53.75em) {
+      .hero .hero-inner .fields {
+        display: block; }
+        .hero .hero-inner .fields::after {
+          clear: both;
+          content: "";
+          display: table; }
+        .hero .hero-inner .fields label {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 23.23176%;
+          margin-left: 8.5298%;
+          text-align: right;
+          position: relative;
+          top: 6px; }
+          .hero .hero-inner .fields label:last-child {
+            margin-right: 0; }
+        .hero .hero-inner .fields input[type=email], .hero .hero-inner .fields input[type=password] {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 40.29137%; }
+          .hero .hero-inner .fields input[type=email]:last-child, .hero .hero-inner .fields input[type=password]:last-child {
+            margin-right: 0; } }
+    .hero .hero-inner .form-controlls a {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none; }
 
 /*# sourceMappingURL=app.css.map */
