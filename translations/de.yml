@@ -22,10 +22,9 @@ login:
   password: "Passwort"
   submit: "Anmelden"
   registration: "Registrieren"
-  errors:
-    wrong_username_or_password: "Benutzername oder Passwort falsch"
 errors:
   not_email: "Keine gültige Email Adresse."
   not_confirmed: "Passwörter stimmen nicht überein."
   too_short: "Passwort ist zu kurz."
   email_already_taken: "Email Adresse ist schon belegt."
+  wrong_username_or_password: "Benutzername oder Passwort falsch"

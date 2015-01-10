@@ -1,6 +1,10 @@
 <form action='/login' method='post'>
-  % if error_on.has_key? 'login'
-  <div class='validation-error'>{{ error_on['login'] }}</div>
+  % if errors.has_key? :login
+  <div class='validation-error'>
+    % errors[:login].each do |error|
+    {{ app.t("errors.#{error}") }}
+    % end
+  </div>
   % end
 
   <div class='twelve columns'>
