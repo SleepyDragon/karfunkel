@@ -465,12 +465,12 @@ nav.side ul li {
           top: 6px; }
           .hero .hero-inner .fields label:last-child {
             margin-right: 0; }
-        .hero .hero-inner .fields input[type=email], .hero .hero-inner .fields input[type=password] {
+        .hero .hero-inner .fields input[type=text], .hero .hero-inner .fields input[type=email], .hero .hero-inner .fields input[type=password] {
           float: left;
           display: block;
           margin-right: 2.35765%;
           width: 40.29137%; }
-          .hero .hero-inner .fields input[type=email]:last-child, .hero .hero-inner .fields input[type=password]:last-child {
+          .hero .hero-inner .fields input[type=text]:last-child, .hero .hero-inner .fields input[type=email]:last-child, .hero .hero-inner .fields input[type=password]:last-child {
             margin-right: 0; } }
     .hero .hero-inner .form-controlls a {
       -webkit-appearance: none;

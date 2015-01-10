@@ -43,7 +43,7 @@
           top: 6px;
         }
 
-        input[type=email], input[type=password] {
+        input[type=text], input[type=email], input[type=password] {
           @include span-columns(5);
         }
       }
