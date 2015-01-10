@@ -42,8 +42,9 @@ Cuba.plugin TranslationsHelper
 Cuba.plugin SessionHelper
 
 Cuba.define do
-  on(root)       { run WelcomeRoutes }
-  on('login')    { run LoginRoutes }
-  on('logout')   { run LogoutRoutes }
-  on('register') { run RegisterRoutes }
+  on(root)       { run WelcomeRoutes     }
+  on('groups')   { run ChooseGroupRoutes }
+  on('login')    { run LoginRoutes       }
+  on('logout')   { run LogoutRoutes      }
+  on('register') { run RegisterRoutes    }
 end
