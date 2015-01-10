@@ -47,7 +47,7 @@ Cuba.plugin Shield::Helpers
 
 Cuba.define do
   def current_user
-    User[session.fetch('User')]
+    User[session.fetch('User')] || NullUser.new
   end
 
   def t(key)
