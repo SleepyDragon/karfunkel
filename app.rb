@@ -9,7 +9,6 @@ require "rack/protection"
 require "scrivener"
 require "scrivener/contrib"
 require "shield"
-require './services/translator'
 
 APP_KEY = ENV.fetch("APP_KEY")
 APP_SECRET = ENV.fetch("APP_SECRET")
@@ -36,12 +35,6 @@ Dir["./filters/**/*.rb"].each  { |f| require(f) }
 Dir["./services/**/*.rb"].each { |f| require(f) }
 Dir["./helpers/**/*.rb"].each  { |f| require(f) }
 Dir["./routes/**/*.rb"].each   { |f| require(f) }
-
-class NullUser
-  def nickname
-    'Unknown'
-  end
-end
 
 Cuba.plugin Shield::Helpers
 
