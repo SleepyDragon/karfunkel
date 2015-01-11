@@ -1,0 +1,141 @@
+.groups {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+  padding-top: 10px;
+}
+
+.group {
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: lighten($card-border-color, 10);
+  $card-header-background: $card-background;
+  $card-hover-background: lighten($card-background, 5);
+  $card-image-background: #DBD199;
+  $card-image-hover-background: lighten($card-image-background, 5);
+  $card-stats-color: lighten($base-accent-color, 10);
+  $card-padding-for-absolute-stats: 5em;
+  $card-margin: 1em;
+
+  @include flex-basis(15em);
+  @include flex-grow(1);
+  @include transition (all 0.2s ease-in-out);
+  background-color: $card-background;
+  border-radius: $base-border-radius;
+  border: $card-border;
+  box-shadow: 0 2px 4px darken($base-background-color, 10);
+  cursor: pointer;
+  margin: 0 $card-margin $base-spacing $card-margin;
+  padding-bottom: $card-padding-for-absolute-stats;
+  position: relative;
+  position: relative;
+
+  .card-image {
+    overflow: hidden;
+    max-height: 150px;
+
+    img {
+      @include transition (all 0.2s ease-in-out);
+      background: $card-image-background;
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      width: 100%;
+    }
+  }
+
+  .ribbon-wrapper {
+    $ribbon-background: $base-accent-color;
+    $ribbon-size: 85px;
+    @include size($ribbon-size);
+    overflow: hidden;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+
+    .ribbon {
+      @include transform(rotate(45deg));
+      background-color: $ribbon-background;
+      box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+      color: white;
+      font-size: .8em;
+      font-weight: 800;
+      left: -5px;
+      line-height: 1.5em;
+      padding: 2px 7px;
+      position: relative;
+      text-align: center;
+      top: 15px;
+      width: 120px;
+    }
+  }
+
+  h2 {
+    @include transition (all 0.2s ease-in-out);
+    background-color: $card-header-background;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: $base-spacing/3 $base-spacing/2;
+    font-size: $base-font-size;
+  }
+
+  .card-stats {
+    @include align-self(flex-end);
+    bottom: .5em;
+    overflow: auto;
+    padding: $base-spacing/2 $base-spacing/2;
+    position: absolute;
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      border-right: 1px solid transparentize($base-font-color, .8);
+      color: $card-stats-color;
+      display: inline;
+      float: left;
+      font-size: 1.2em;
+      font-weight: 800;
+      line-height: 1.1em;
+      padding: 0 .7em 0 .7em;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+
+      span {
+        color: $base-font-color;
+        display: block;
+        font-size: .7em;
+        font-weight: normal;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: $card-hover-background;
+
+    .card-image img {
+      background: $card-image-hover-background;
+    }
+
+    h2 {
+      background-color: $card-hover-background;
+    }
+  }
+
+  &:active {
+    background-color: $card-background;
+
+    h2 {
+      background-color: $card-background;
+    }
+  }
+}
+

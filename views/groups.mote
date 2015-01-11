@@ -1,7 +1,17 @@
 <div class="groups">
   % groups.each do |group|
   <div class="group">
+    <div class="card-image">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
+    </div>
     <h2>{{ group.name }}</h2>
+    <div class="card-stats">
+      <ul>
+        <li>98<span>Items</span></li>
+        <li>298<span>Things</span></li>
+        <li>923<span>Objects</span></li>
+      </ul>
+    </div>
   </div>
   % end
 </div>
