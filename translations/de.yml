@@ -24,6 +24,12 @@ login:
   password: "Passwort"
   submit: "Anmelden"
   registration: "Registrieren"
+groups:
+  create:
+    name: "Name der Gruppe"
+    system: "Spielsystem"
+    abort: "Abbrechen"
+    submit: "Gruppe erstellen"
 errors:
   not_present: "Darf nicht leergelassen werden."
   not_email: "Keine gültige Email Adresse."

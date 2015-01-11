@@ -19,4 +19,17 @@ scope do
       assert page.assert_selector('h2', text: 'Spinner')
     end
   end
+
+  test 'create a new group' do
+    visit '/groups/new'
+
+    fill_in 'name', with: 'Ardberg'
+    select 'DSA 5', from: 'system'
+    click_button 'Gruppe erstellen'
+
+    assert_equal current_path, '/groups'
+    within '.groups' do
+      assert page.assert_selector('h2', text: 'Ardberg')
+    end
+  end
 end

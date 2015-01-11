@@ -1,0 +1,35 @@
+<form action='/groups' method='post'>
+  % if errors.has_key? :name
+  <div class='validation-error'>
+    % errors[:name].each do |error|
+    {{ app.t("errors.#{error}") }}
+    % end
+  </div>
+  % end
+  <div class='fields'>
+    <label for='name'>{{ app.t('groups.create.name') }}:</label>
+    <input type='text' name='name' placeholder='Incredibles' value="{{ name }}">
+  </div>
+
+
+  % if errors.has_key? :system
+  <div class='validation-error'>
+    % errors[:system].each do |error|
+    {{ app.t("errors.#{error}") }}
+    % end
+  </div>
+  % end
+  <div class='fields'>
+    <label for='system'>{{ app.t('groups.create.system') }}:</label>
+    <select name='system'>
+      % systems.each do |system|
+      <option value="{{system.slug}}">{{system.name}}</option>
+      %end
+    </select>
+  </div>
+
+  <div class='form-controlls'>
+    <a href='/systems'>{{ app.t('groups.create.abort') }}</a>
+    <input id='submit' value="{{ app.t('groups.create.submit') }}" type="submit">
+  </div>
+</form>
