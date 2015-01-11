@@ -21,7 +21,8 @@ scope do
   end
 
   test 'create a new group' do
-    visit '/groups/new'
+    visit '/groups'
+    click_link 'Neue Gruppe erstellen'
 
     fill_in 'name', with: 'Ardberg'
     select 'DSA 5', from: 'system'

@@ -27,6 +27,7 @@ login:
 groups:
   index:
     title: "Gruppen von"
+    create_link: "Neue Gruppe erstellen"
   create:
     name: "Name der Gruppe"
     system: "Spielsystem"

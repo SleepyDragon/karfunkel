@@ -17,3 +17,5 @@
   </div>
   % end
 </div>
+
+<a href='/groups/new'>{{ app.t('groups.index.create_link') }}</a>
