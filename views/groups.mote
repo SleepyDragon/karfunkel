@@ -1,3 +1,5 @@
+<h2>{{ app.t('groups.index.title')}} {{app.current_user.nickname}}</h2>
+
 <div class="groups">
   % groups.each do |group|
   <div class="group">

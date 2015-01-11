@@ -25,6 +25,8 @@ login:
   submit: "Anmelden"
   registration: "Registrieren"
 groups:
+  index:
+    title: "Gruppen von"
   create:
     name: "Name der Gruppe"
     system: "Spielsystem"

@@ -14,7 +14,7 @@ LoginRoutes.define do
     password = req.params['password']
 
     if login(User, email, password)
-      res.redirect '/'
+      res.redirect '/groups'
     else
       render('login', {
         email: email,

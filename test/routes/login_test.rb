@@ -5,14 +5,14 @@ scope do
     User.create(email: 'test@example.com', nickname: 'talisker', password: 'verysecret')
   end
 
-  test 'successful login redirects to root URL and greats user' do
+  test 'successful login redirects to groups' do
     visit '/login'
     fill_in 'email', with: 'test@example.com'
     fill_in 'password', with: 'verysecret'
 
     click_button 'submit'
-    assert_equal current_path, '/'
-    assert has_content?('talisker')
+    assert_equal current_path, '/groups'
+    assert has_content?("Gruppen von talisker")
   end
 
   test 'entering the wrong password will give an error' do
