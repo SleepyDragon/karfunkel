@@ -5,8 +5,18 @@ class RegisterValidation < Scrivener
   attr_accessor :password_confirmation
 
   def validate
-    assert_email(:email)
-    assert_minimum_length(:password, 5)
-    assert_confirmation(:password)
+    if assert_present(:email)
+      assert_email(:email)
+    end
+
+    assert_present(:nickname)
+
+    if assert_present(:password)
+      assert_minimum_length(:password, 5)
+    end
+
+    if assert_present(:password_confirmation)
+      assert_confirmation(:password)
+    end
   end
 end

@@ -10,13 +10,8 @@ RegisterRoutes.define do
     })
   end
 
-  on post, param('email'), param('nickname'), param('password'), param('password_confirmation') do |email, nickname, password, password_confirmation|
-    registration = RegisterValidation.new(
-      email: email,
-      nickname: nickname,
-      password: password,
-      password_confirmation: password_confirmation
-    )
+  on post do
+    registration = RegisterValidation.new(req.params)
 
     if registration.valid?
       begin
@@ -30,8 +25,8 @@ RegisterRoutes.define do
 
     render('register', {
       errors: registration.errors,
-      email: email,
-      nickname: nickname
+      email: registration.email,
+      nickname: registration.nickname
     })
   end
 end

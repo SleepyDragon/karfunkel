@@ -25,6 +25,7 @@ login:
   submit: "Anmelden"
   registration: "Registrieren"
 errors:
+  not_present: "Darf nicht leergelassen werden."
   not_email: "Keine gültige Email Adresse."
   not_confirmed: "Passwörter stimmen nicht überein."
   too_short: "Passwort ist zu kurz (mindestens 5 Zeichen)."
