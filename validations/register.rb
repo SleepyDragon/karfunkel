@@ -7,6 +7,7 @@ class RegisterValidation < Scrivener
   def validate
     if assert_present(:email)
       assert_email(:email)
+      assert_unique(:email, :User)
     end
 
     assert_present(:nickname)
