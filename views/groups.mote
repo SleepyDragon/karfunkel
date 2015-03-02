@@ -14,9 +14,7 @@
     <h2>{{ group.name }}</h2>
     <div class="card-stats">
       <ul>
-        <li>98<span>Items</span></li>
-        <li>298<span>Things</span></li>
-        <li>923<span>Objects</span></li>
+        <li>4<span>Players</span></li>
       </ul>
     </div>
   </div>
