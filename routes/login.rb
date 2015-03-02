@@ -9,7 +9,10 @@ LoginRoutes.define do
     })
   end
 
-  on post, param('email'), param('password') do |email, password|
+  on post do
+    email = req.params['email']
+    password = req.params['password']
+
     if login(User, email, password)
       res.redirect '/'
     else
