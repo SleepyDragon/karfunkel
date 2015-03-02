@@ -14,8 +14,8 @@ RegisterRoutes.define do
     registration = RegisterValidation.new(req.params)
 
     if registration.valid?
-      User.create(registration.slice(:email, :nickname, :password))
-      login(User, registration.email, registration.password)
+      user = User.create(registration.slice(:email, :nickname, :password))
+      authenticate(user)
       res.redirect '/'
     else
       render('register', {
