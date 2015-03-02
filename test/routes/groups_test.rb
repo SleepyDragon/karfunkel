@@ -16,7 +16,9 @@ scope do
 
     within '.groups' do
       assert page.assert_selector('h2', text: 'Peergroup')
+      assert page.assert_selector('.system', text: 'DSA 5')
       assert page.assert_selector('h2', text: 'Spinner')
+      assert page.assert_selector('.system', text: 'DSA 4')
     end
   end
 

@@ -3,6 +3,11 @@
 <div class="groups">
   % groups.each do |group|
   <div class="group">
+    <div class="system-wrapper">
+      <div class="system">
+        {{ group.system }}
+      </div>
+    </div>
     <div class="card-image">
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
     </div>

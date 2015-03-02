@@ -43,7 +43,7 @@
     }
   }
 
-  .ribbon-wrapper {
+  .system-wrapper {
     $ribbon-background: $base-accent-color;
     $ribbon-size: 85px;
     @include size($ribbon-size);
@@ -52,7 +52,7 @@
     right: -1px;
     top: -1px;
 
-    .ribbon {
+    .system {
       @include transform(rotate(45deg));
       background-color: $ribbon-background;
       box-shadow: 0px 0px 3px rgba(0,0,0,0.3);

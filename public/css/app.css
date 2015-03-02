@@ -537,14 +537,14 @@ nav.side ul li {
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
       width: 100%; }
-  .group .ribbon-wrapper {
+  .group .system-wrapper {
     height: 85px;
     width: 85px;
     overflow: hidden;
     position: absolute;
     right: -1px;
     top: -1px; }
-    .group .ribbon-wrapper .ribbon {
+    .group .system-wrapper .system {
       -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
