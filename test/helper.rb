@@ -8,3 +8,15 @@ prepare do
   Ohm.flush
   Malone.deliveries.clear
 end
+
+def login_as(email, password)
+  visit '/login'
+  fill_in 'email', with: email
+  fill_in 'password', with: password
+  click_button 'submit'
+end
+
+def logout
+  visit '/'
+  click_button 'Abmelden'
+end

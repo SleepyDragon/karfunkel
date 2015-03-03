@@ -17,7 +17,11 @@ GroupsRoutes.define do
   end
 
   on post, param('name'), param('system') do |name, system|
-    Group.create(name: name, system: system)
-    res.redirect '/groups'
+    if logged_in?
+      Group.create(name: name, system: system, game_master: current_user)
+      res.redirect '/groups'
+    else
+      res.status = 401
+    end
   end
 end
