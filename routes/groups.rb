@@ -16,10 +16,19 @@ GroupsRoutes.define do
     })
   end
 
-  on post, param('name'), param('system') do |name, system|
+  on post do
     if logged_in?
-      Group.create(name: name, system: system, game_master: current_user)
-      res.redirect '/groups'
+      create_group = CreateGroupValidation.new(req.params.merge(game_master: current_user))
+      if create_group.valid?
+        Group.create(create_group.attributes)
+        res.redirect '/groups'
+      else
+        render('create-group', {
+          systems: System.all.to_a,
+          errors: create_group.errors,
+          name: create_group.name
+        });
+      end
     else
       res.status = 401
     end
