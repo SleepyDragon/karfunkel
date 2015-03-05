@@ -1,4 +1,4 @@
-.PHONY: test
+.PHONY: test style
 
 install:
 	bundle install
