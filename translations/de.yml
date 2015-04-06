@@ -7,9 +7,14 @@ general:
     settings: "Einstellungen"
     characters: "Charaktere"
     game_master_overview: "Spielleiterschirm"
+    manage: "Gruppenverwaltung"
     logout: "Abmelden"
 welcome:
   title: "Willkommen"
+manage-group:
+  title: "Gruppenverwaltung"
+  manage-players: "Spieler verwalten"
+  submit: "Spieler festlegen"
 register:
   title: "Willkommen bei Karfunkel"
   email: "Email"
