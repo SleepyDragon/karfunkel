@@ -15,3 +15,10 @@ test 'The group should have a representation of the title' do
   created_group = Group.create(name: 'Peergroup', system: 'dsa5', game_master: @game_master)
   assert_equal created_group.title, 'Peergroup (Meisterchen)'
 end
+
+test 'Add a player to the game' do
+  created_group = Group.create(name: 'Peergroup', system: 'dsa5', game_master: @game_master)
+  player = User.create(email: 'player@peergroup.de', nickname: 'Spielerlein')
+  created_group.players << player
+  assert_equal created_group.players.first, player
+end
