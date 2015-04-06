@@ -5,7 +5,7 @@
   <div class='fields'>
     <select name="players[]" multiple>
       % players.each do |player|
-      <option value="{{ player.id }}" {{ "selected" if player.in_group? app.group }}>{{ player.nickname }}</option>
+      <option value="{{ player.id }}" {{ "selected" if player.player_in? app.group }}>{{ player.nickname }}</option>
       % end
     </select>
   </div>

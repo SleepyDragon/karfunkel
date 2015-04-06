@@ -14,7 +14,7 @@ class User < Ohm::Model
     with(:email, email)
   end
 
-  def in_group?(group)
+  def player_in?(group)
     group.players.include? self
   end
 
