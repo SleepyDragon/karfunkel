@@ -9,7 +9,7 @@ scope do
     fill_in 'password_confirmation', with: 'ilikewhiskey'
     click_button 'Registrieren'
 
-    assert_equal current_path, '/'
+    assert_equal current_path, '/groups'
     assert has_content?('lagavulin')
   end
 
@@ -27,7 +27,7 @@ scope do
     fill_in 'password_confirmation', with: 'ilikewhiskey'
     click_button 'Registrieren'
 
-    assert_equal current_path, '/'
+    assert_equal current_path, '/groups'
     assert has_content?('oban')
   end
 end

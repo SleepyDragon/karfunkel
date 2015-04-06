@@ -1,0 +1,16 @@
+<h1>{{ app.t('manage-group.title') }}</h1>
+
+<h2>{{ app.t('manage-group.manage-players') }}</h2>
+<form action='/groups/{{ app.group.id }}/manage' method='post'>
+  <div class='fields'>
+    <select name="players[]" multiple>
+      % players.each do |player|
+      <option value="{{ player.id }}" {{ "selected" if player.player_in? app.group }}>{{ player.nickname }}</option>
+      % end
+    </select>
+  </div>
+
+  <div class='form-controlls'>
+    <input class="button-primary" value="{{ app.t('manage-group.submit') }}" type="submit">
+  </div>
+</form>

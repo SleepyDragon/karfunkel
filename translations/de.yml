@@ -7,9 +7,14 @@ general:
     settings: "Einstellungen"
     characters: "Charaktere"
     game_master_overview: "Spielleiterschirm"
+    manage: "Gruppenverwaltung"
     logout: "Abmelden"
 welcome:
   title: "Willkommen"
+manage-group:
+  title: "Gruppenverwaltung"
+  manage-players: "Spieler verwalten"
+  submit: "Spieler festlegen"
 register:
   title: "Willkommen bei Karfunkel"
   email: "Email"
@@ -24,6 +29,15 @@ login:
   password: "Passwort"
   submit: "Anmelden"
   registration: "Registrieren"
+groups:
+  index:
+    title: "Gruppen von"
+    create_link: "Neue Gruppe erstellen"
+  create:
+    name: "Name der Gruppe"
+    system: "Spielsystem"
+    abort: "Abbrechen"
+    submit: "Gruppe erstellen"
 errors:
   not_present: "Darf nicht leergelassen werden."
   not_email: "Keine gültige Email Adresse."

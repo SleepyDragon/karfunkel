@@ -1,9 +1,12 @@
 <nav class="side">
   <ul>
-    <li><a href="">{{ app.t('general.navigation.welcome') }}</a></li>
+    <li><a href="/groups/{{ app.group.id }}/welcome">{{ app.t('general.navigation.welcome') }}</a></li>
     <li><a href="">{{ app.t('general.navigation.journal') }}</a></li>
     <li><a href="">{{ app.t('general.navigation.characters') }}</a></li>
     <li><a href="">{{ app.t('general.navigation.downloads') }}</a></li>
-    <li><a href="">{{ app.t('general.navigation.game_master_overview') }}</a></li>
+    % if app.current_user.game_master_for? app.group
+      <li><a href="">{{ app.t('general.navigation.game_master_overview') }}</a></li>
+      <li><a href="/groups/{{ app.group.id }}/manage">{{ app.t('general.navigation.manage') }}</a></li>
+    % end
   </ul>
 </nav>

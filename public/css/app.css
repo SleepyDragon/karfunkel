@@ -479,4 +479,138 @@ nav.side ul li {
       -o-appearance: none;
       appearance: none; }
 
+.groups {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  padding-top: 10px; }
+
+.group {
+  -webkit-flex-basis: 15em;
+  -moz-flex-basis: 15em;
+  flex-basis: 15em;
+  -ms-flex-preferred-size: 15em;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  border: 1px solid #DDD;
+  box-shadow: 0 2px 4px #e6e6e6;
+  cursor: pointer;
+  margin: 0 1em 1.5em 1em;
+  padding-bottom: 5em;
+  position: relative;
+  position: relative; }
+  .group .card-image {
+    overflow: hidden;
+    max-height: 150px; }
+    .group .card-image img {
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      background: #DBD199;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      width: 100%; }
+  .group .system-wrapper {
+    height: 85px;
+    width: 85px;
+    overflow: hidden;
+    position: absolute;
+    right: -1px;
+    top: -1px; }
+    .group .system-wrapper .system {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      background-color: #477DCA;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+      color: white;
+      font-size: .8em;
+      font-weight: 800;
+      left: -5px;
+      line-height: 1.5em;
+      padding: 2px 7px;
+      position: relative;
+      text-align: center;
+      top: 15px;
+      width: 120px; }
+  .group h2 {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #DDD;
+    border-radius: 3px 3px 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: 0.5em 0.75em;
+    font-size: 1em; }
+  .group .card-stats {
+    -webkit-align-self: flex-end;
+    -moz-align-self: flex-end;
+    align-self: flex-end;
+    -ms-flex-item-align: end;
+    bottom: .5em;
+    overflow: auto;
+    padding: 0.75em 0.75em;
+    position: absolute; }
+    .group .card-stats ul {
+      padding: 0; }
+    .group .card-stats li {
+      border-right: 1px solid rgba(51, 51, 51, 0.2);
+      color: #6f99d5;
+      display: inline;
+      float: left;
+      font-size: 1.2em;
+      font-weight: 800;
+      line-height: 1.1em;
+      padding: 0 .7em 0 .7em; }
+      .group .card-stats li:first-child {
+        padding-left: 0; }
+      .group .card-stats li:last-child {
+        border-right: 0; }
+      .group .card-stats li span {
+        color: #333;
+        display: block;
+        font-size: .7em;
+        font-weight: normal; }
+  .group:hover {
+    background-color: white; }
+    .group:hover .card-image img {
+      background: #e2daac; }
+    .group:hover h2 {
+      background-color: white; }
+  .group:active {
+    background-color: #f7f7f7; }
+    .group:active h2 {
+      background-color: #f7f7f7; }
+
 /*# sourceMappingURL=app.css.map */

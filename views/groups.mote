@@ -1,0 +1,24 @@
+<h2>{{ app.t('groups.index.title')}} {{app.current_user.nickname}}</h2>
+
+<div class="groups">
+  % groups.each do |group|
+  <div class="group">
+    <div class="system-wrapper">
+      <div class="system">
+        {{ group.system }}
+      </div>
+    </div>
+    <div class="card-image">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
+    </div>
+    <h2><a href="/groups/{{ group.id }}/welcome">{{ group.title }}</a></h2>
+    <div class="card-stats">
+      <ul>
+        <li>{{ group.players.size }}<span>Players</span></li>
+      </ul>
+    </div>
+  </div>
+  % end
+</div>
+
+<a href='/groups/new'>{{ app.t('groups.index.create_link') }}</a>
