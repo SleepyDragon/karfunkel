@@ -1,7 +1,7 @@
-class WelcomeRoutes < Cuba
+class GroupRoutes < Cuba
 end
 
-WelcomeRoutes.define do
+GroupRoutes.define do
   on get, 'welcome' do
     res.status = 401 unless authenticated(User)
     render('welcome')

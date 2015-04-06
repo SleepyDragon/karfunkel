@@ -53,7 +53,7 @@ Cuba.define do
     if group.nil?
       res.redirect '/groups'
     else
-      with(group: group) { run WelcomeRoutes }
+      with(group: group) { run GroupRoutes }
     end
   end
 
