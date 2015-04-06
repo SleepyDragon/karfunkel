@@ -43,8 +43,20 @@ Cuba.plugin SessionHelper
 
 Cuba.define do
   on(root)       { res.redirect '/groups' }
-  on('groups')   { run GroupsRoutes      }
   on('login')    { run LoginRoutes       }
   on('logout')   { run LogoutRoutes      }
   on('register') { run RegisterRoutes    }
+
+  on('groups/(\\d+)') do |group_id|
+    group = Group[group_id]
+    if group.nil?
+      res.redirect '/groups'
+    else
+      with(group: group) do
+        on('welcome')     { run WelcomeRoutes     }
+      end
+    end
+  end
+
+  on('groups')   { run GroupsRoutes      }
 end

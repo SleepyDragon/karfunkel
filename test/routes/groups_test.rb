@@ -52,4 +52,25 @@ scope do
     assert_equal Group.find(name: 'Never created').count, 0
     assert_equal current_path, '/login'
   end
+
+  test 'selecting group should bring you to the welcome page for the group' do
+    login_as 'mary@example.com', 'puff'
+
+    group = @groups.first
+    visit '/groups'
+    click_link group.name
+
+    assert_equal current_path, "/groups/#{group.id}/welcome"
+
+    logout
+  end
+
+  test 'redirect to group selection if group ID does not exist' do
+    login_as 'mary@example.com', 'puff'
+
+    visit '/groups/10000/welcome'
+    assert_equal current_path, '/groups'
+
+    logout
+  end
 end

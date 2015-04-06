@@ -11,7 +11,7 @@
     <div class="card-image">
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
     </div>
-    <h2>{{ group.title }}</h2>
+    <h2><a href="/groups/{{ group.id }}/welcome">{{ group.title }}</a></h2>
     <div class="card-stats">
       <ul>
         <li>4<span>Players</span></li>
