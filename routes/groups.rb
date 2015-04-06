@@ -4,8 +4,10 @@ end
 GroupsRoutes.define do
   on get, root do
     if logged_in?
+      groups = Group.all.to_a.find_all { |group| current_user.member_of? group }
+
       render('groups', {
-        groups: Group.all.to_a
+        groups: groups
       })
     else
       res.status = 401

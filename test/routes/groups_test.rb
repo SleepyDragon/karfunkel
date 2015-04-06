@@ -4,12 +4,11 @@ scope do
   setup do
     game_master_1 = User.create(nickname: 'Peter', email: 'peter@example.com', password: 'secret')
     game_master_2 = User.create(nickname: 'Paul', email: 'paul@example.com', password: 'secret')
-    User.create(nickname: 'Mary', password: 'puff', email: 'mary@example.com')
+    player = User.create(nickname: 'Mary', password: 'puff', email: 'mary@example.com')
 
-    @groups = [
-      Group.create(name: 'Peergroup', system: 'DSA 5', game_master: game_master_1),
-      Group.create(name: 'Spinner', system: 'DSA 4', game_master: game_master_2)
-    ]
+    Group.create(name: 'Peergroup', system: 'DSA 5', game_master: game_master_1)
+    @pauls_group = Group.create(name: 'Spinner', system: 'DSA 4', game_master: game_master_2)
+    @pauls_group.players.replace([ player ])
   end
 
   test 'shows all groups' do
@@ -19,8 +18,8 @@ scope do
     within '.groups' do
       assert page.assert_selector('h2', text: 'Peergroup (Peter)')
       assert page.assert_selector('.system', text: 'DSA 5')
-      assert page.assert_selector('h2', text: 'Spinner (Paul)')
-      assert page.assert_selector('.system', text: 'DSA 4')
+      assert page.refute_selector('h2', text: 'Spinner (Paul)')
+      assert page.refute_selector('.system', text: 'DSA 4')
     end
 
     logout
@@ -47,12 +46,11 @@ scope do
   test 'selecting group should bring you to the welcome page for the group' do
     login_as 'mary@example.com', 'puff'
 
-    group = @groups.last
     visit '/groups'
-    click_link group.name
+    click_link @pauls_group.name
 
-    assert has_content?("Spielgruppe: #{group.name}")
-    assert_equal current_path, "/groups/#{group.id}/welcome"
+    assert has_content?("Spielgruppe: #{@pauls_group.name}")
+    assert_equal current_path, "/groups/#{@pauls_group.id}/welcome"
 
     logout
   end

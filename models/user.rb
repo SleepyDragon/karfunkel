@@ -21,4 +21,8 @@ class User < Ohm::Model
   def game_master_for?(group)
     group.game_master == self
   end
+
+  def member_of?(group)
+    player_in?(group) || game_master_for?(group)
+  end
 end
