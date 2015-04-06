@@ -42,7 +42,7 @@ Cuba.plugin TranslationsHelper
 Cuba.plugin SessionHelper
 
 Cuba.define do
-  on(root)       { run WelcomeRoutes     }
+  on(root)       { res.redirect '/groups' }
   on('groups')   { run GroupsRoutes      }
   on('login')    { run LoginRoutes       }
   on('logout')   { run LogoutRoutes      }
