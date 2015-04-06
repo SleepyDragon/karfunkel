@@ -40,6 +40,7 @@ Dir["./routes/**/*.rb"].each   { |f| require(f) }
 Cuba.plugin Shield::Helpers
 Cuba.plugin TranslationsHelper
 Cuba.plugin SessionHelper
+Cuba.plugin GroupHelper
 
 Cuba.define do
   on(root)       { res.redirect '/groups' }

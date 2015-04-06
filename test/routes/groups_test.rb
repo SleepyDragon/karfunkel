@@ -56,10 +56,11 @@ scope do
   test 'selecting group should bring you to the welcome page for the group' do
     login_as 'mary@example.com', 'puff'
 
-    group = @groups.first
+    group = @groups.last
     visit '/groups'
     click_link group.name
 
+    assert has_content?("Spielgruppe: #{group.name}")
     assert_equal current_path, "/groups/#{group.id}/welcome"
 
     logout
