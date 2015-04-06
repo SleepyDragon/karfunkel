@@ -3,17 +3,25 @@ end
 
 GroupsRoutes.define do
   on get, root do
-    render('groups', {
-      groups: Group.all.to_a
-    })
+    if logged_in?
+      render('groups', {
+        groups: Group.all.to_a
+      })
+    else
+      res.status = 401
+    end
   end
 
   on get, 'new' do
+    if logged_in?
     render('create-group', {
       systems: System.all.to_a,
       errors: {},
       name: ""
     })
+    else
+      res.status = 401
+    end
   end
 
   on post do
