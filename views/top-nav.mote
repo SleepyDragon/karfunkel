@@ -8,7 +8,7 @@
       % if app.group_selected?
         <li class="nav-link">Spielgruppe: {{ app.group.name }}</a>
       % end
-      <li class="nav-link"><a href="">{{ app.t('general.navigation.back_to_groups') }}</a></li>
+      <li class="nav-link"><a href="/groups">{{ app.t('general.navigation.back_to_groups') }}</a></li>
       <li class="nav-link logo">
         <a href="/" class="logo">
           <img src="/img/karfunkel.svg" alt="Karfunkel Logo">
