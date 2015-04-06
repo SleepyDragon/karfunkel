@@ -14,7 +14,7 @@
     <h2><a href="/groups/{{ group.id }}/welcome">{{ group.title }}</a></h2>
     <div class="card-stats">
       <ul>
-        <li>4<span>Players</span></li>
+        <li>{{ group.players.size }}<span>Players</span></li>
       </ul>
     </div>
   </div>
