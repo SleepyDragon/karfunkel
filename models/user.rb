@@ -17,4 +17,8 @@ class User < Ohm::Model
   def in_group?(group)
     group.players.include? self
   end
+
+  def game_master_for?(group)
+    group.game_master == self
+  end
 end
