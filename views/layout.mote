@@ -13,7 +13,7 @@
       </header>
       % end
 
-      % if app.logged_in? # will later be: Game selected
+      % if app.group_selected?
       <div class="two-columns">
         <aside>
           {{! app.partial('side-nav') }}
