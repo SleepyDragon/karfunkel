@@ -72,7 +72,6 @@ DEPENDENCIES
   cuba
   cutest
   fat
-  hache
   hmote
   hmote-render
   malone

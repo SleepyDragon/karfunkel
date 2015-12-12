@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'cuba'
-gem 'hache'
 gem 'hmote'
 gem 'hmote-render'
 gem 'malone'
