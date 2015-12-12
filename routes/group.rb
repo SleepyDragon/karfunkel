@@ -6,7 +6,7 @@ GroupRoutes.define do
     res.status = 401 unless authenticated(User)
     render('welcome', {
       group_id: group.id,
-      events: group.events,
+      events: group.upcoming_events,
     })
   end
 
@@ -33,8 +33,8 @@ GroupRoutes.define do
       on get do
         render('create-event', {
           errors: {},
-          date: nil,
           time: nil,
+          length: nil,
           location: nil,
           group_id: group.id,
         })
@@ -47,6 +47,16 @@ GroupRoutes.define do
         event = Event.create(create_event.attributes)
         group.events << event
         res.redirect "/groups/#{group.id}/welcome"
+      else
+        p create_event.errors
+
+        render('create-event', {
+          errors: create_event.errors,
+          time: create_event.time,
+          length: create_event.length,
+          location: create_event.location,
+          group_id: group.id,
+        })
       end
     end
   end

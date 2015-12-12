@@ -13,9 +13,8 @@ welcome:
   title: "Willkommen"
   create_event: "Neuen Termin erstellen"
   events_table: "Nächste Events"
-  event_date: "Datum"
-  event_time: "Zeit"
-  event_location: "Ort"
+  when: "Wann?"
+  where: "Wo?"
 manage-group:
   title: "Gruppenverwaltung"
   manage-players: "Spieler verwalten"
@@ -46,8 +45,8 @@ groups:
   events:
     create:
       title: "Neuen Event erstellen"
-      date: "Datum"
-      time: "Zeit"
+      time: "Datum und Zeit"
+      length: "Länge"
       location: "Ort"
       abort: "Abbrechen"
       submit: "Termin erstellen"
@@ -57,4 +56,6 @@ errors:
   not_confirmed: "Passwörter stimmen nicht überein."
   too_short: "Passwort ist zu kurz (mindestens 5 Zeichen)."
   not_unique: "Leider schon belegt."
+  format: "Leider im falschen Format."
+  not_numeric: "Muss eine Zahl sein."
   wrong_username_or_password: "Benutzername oder Passwort falsch"

@@ -1,34 +1,34 @@
 <h1>{{ app.t('groups.events.create.title') }}</h1>
 
 <form action='/groups/{{ group_id }}/events' method='post'>
-  % if errors.has_key? :date
-  <div class='validation-error'>
-    % errors[:date].each do |error|
-    {{ app.t("errors.#{date}") }}
-    % end
-  </div>
-  % end
-  <div class='fields'>
-    <label for='date'>{{ app.t('groups.events.create.date') }}:</label>
-    <input type='date' name='date' placeholder='2014-12-24' value="{{ date }}">
-  </div>
-
   % if errors.has_key? :time
   <div class='validation-error'>
     % errors[:time].each do |error|
-    {{ app.t("errors.#{time}") }}
+    {{ app.t("errors.#{error}") }}
     % end
   </div>
   % end
   <div class='fields'>
     <label for='time'>{{ app.t('groups.events.create.time') }}:</label>
-    <input type='time' name='time' placeholder='14:00' value="{{ time }}">
+    <input type='timetime-local' name='time' placeholder='2014-12-24T19:00' value="{{ time }}">
+  </div>
+
+  % if errors.has_key? :length
+  <div class='validation-error'>
+    % errors[:length].each do |error|
+    {{ app.t("errors.#{error}") }}
+    % end
+  </div>
+  % end
+  <div class='fields'>
+    <label for='length'>{{ app.t('groups.events.create.length') }}:</label>
+    <input type='length' name='length' placeholder='4' value="{{ length }}">
   </div>
 
   % if errors.has_key? :location
   <div class='validation-error'>
     % errors[:location].each do |error|
-    {{ app.t("errors.#{location}") }}
+    {{ app.t("errors.#{error}") }}
     % end
   </div>
   % end
