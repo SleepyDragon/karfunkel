@@ -24,4 +24,20 @@ scope do
     assert_equal current_path, "/login"
     logout
   end
+
+  test 'manage events' do
+    login_as 'mary@example.com', 'puff'
+    visit "/groups/#{@group.id}/welcome"
+    click_link 'Neuen Termin erstellen'
+    fill_in 'date', with: '2016-04-01'
+    fill_in 'time', with: 'Afternoon'
+    fill_in 'location', with: 'Pub'
+    click_button 'Termin erstellen'
+
+    within '#events tr:first-child' do
+      assert has_content? '01.04.2016'
+      assert has_content? 'Afternoon'
+      assert has_content? 'Pub'
+    end
+  end
 end

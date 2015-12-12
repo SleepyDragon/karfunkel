@@ -1,0 +1,44 @@
+<h1>{{ app.t('groups.events.create.title') }}</h1>
+
+<form action='/groups/{{ group_id }}/events' method='post'>
+  % if errors.has_key? :date
+  <div class='validation-error'>
+    % errors[:date].each do |error|
+    {{ app.t("errors.#{date}") }}
+    % end
+  </div>
+  % end
+  <div class='fields'>
+    <label for='date'>{{ app.t('groups.events.create.date') }}:</label>
+    <input type='date' name='date' placeholder='2014-12-24' value="{{ date }}">
+  </div>
+
+  % if errors.has_key? :time
+  <div class='validation-error'>
+    % errors[:time].each do |error|
+    {{ app.t("errors.#{time}") }}
+    % end
+  </div>
+  % end
+  <div class='fields'>
+    <label for='time'>{{ app.t('groups.events.create.time') }}:</label>
+    <input type='time' name='time' placeholder='14:00' value="{{ time }}">
+  </div>
+
+  % if errors.has_key? :location
+  <div class='validation-error'>
+    % errors[:location].each do |error|
+    {{ app.t("errors.#{location}") }}
+    % end
+  </div>
+  % end
+  <div class='fields'>
+    <label for='location'>{{ app.t('groups.events.create.location') }}:</label>
+    <input type='location' name='location' placeholder='Garage' value="{{ location }}">
+  </div>
+
+  <div class='form-controlls'>
+    <a href='/systems'>{{ app.t('groups.events.create.abort') }}</a>
+    <input id='submit' value="{{ app.t('groups.events.create.submit') }}" type="submit">
+  </div>
+</form>

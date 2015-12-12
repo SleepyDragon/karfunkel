@@ -34,6 +34,8 @@ GEM
       msgpack
       nido
       redic
+    ohm-contrib (2.0.1)
+      ohm (~> 2.0)
     ost (1.0.0)
       nido
       redic
@@ -71,6 +73,7 @@ DEPENDENCIES
   hmote
   malone
   ohm
+  ohm-contrib
   ost
   osth
   rack-protection

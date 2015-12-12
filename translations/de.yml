@@ -11,6 +11,11 @@ general:
     logout: "Abmelden"
 welcome:
   title: "Willkommen"
+  create_event: "Neuen Termin erstellen"
+  events_table: "Nächste Events"
+  event_date: "Datum"
+  event_time: "Zeit"
+  event_location: "Ort"
 manage-group:
   title: "Gruppenverwaltung"
   manage-players: "Spieler verwalten"
@@ -38,6 +43,14 @@ groups:
     system: "Spielsystem"
     abort: "Abbrechen"
     submit: "Gruppe erstellen"
+  events:
+    create:
+      title: "Neuen Event erstellen"
+      date: "Datum"
+      time: "Zeit"
+      location: "Ort"
+      abort: "Abbrechen"
+      submit: "Termin erstellen"
 errors:
   not_present: "Darf nicht leergelassen werden."
   not_email: "Keine gültige Email Adresse."

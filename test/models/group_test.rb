@@ -22,3 +22,10 @@ test 'Add a player to the game' do
   created_group.players << player
   assert_equal created_group.players.first, player
 end
+
+test 'Add an event to the group' do
+  group = Group.create(name: 'Peergroup', system: 'dsa5', game_master: @game_master)
+  event = Event.create(date: Date.today, time: 'Afternoon', location: 'Internet')
+  group.events << event
+  assert_equal event, Group[group.id].events.first
+end

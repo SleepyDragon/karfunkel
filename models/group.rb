@@ -3,6 +3,7 @@ class Group < Ohm::Model
   attribute :system
   reference :game_master, :User
   set :players, :User
+  set :events, :Event
   index :name
 
   def title

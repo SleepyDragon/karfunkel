@@ -1,1 +1,24 @@
 <h1>{{ app.t('welcome.title') }}, {{ app.current_user.nickname }}</h1>
+
+
+<h2>{{ app.t('welcome.events_table') }}</h2>
+
+<table id="events">
+  <tr>
+    <th>{{ app.t('welcome.event_date') }}</th>
+    <th>{{ app.t('welcome.event_time') }}</th>
+    <th>{{ app.t('welcome.event_location') }}</th>
+  </tr>
+
+  % events.each do |event|
+  <tr>
+    <td>{{ event.date.strftime('%d.%m.%Y') }}</td>
+    <td>{{ event.time }}</td>
+    <td>{{ event.location }}</td>
+  </tr>
+  % end
+</table>
+
+% if app.current_user.game_master_for? app.group
+<a href="/groups/{{group_id}}/events/new">{{ app.t('welcome.create_event') }}</a>
+% end

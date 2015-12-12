@@ -8,7 +8,7 @@
   % end
   <div class='fields'>
     <label for='name'>{{ app.t('groups.create.name') }}:</label>
-    <input type='text' name='name' placeholder='Incredibles' value="{{ name }}">
+    <input type='text' name='name' placeholder='incredibles' value="{{ name }}">
   </div>
 
 
