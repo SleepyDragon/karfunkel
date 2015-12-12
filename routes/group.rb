@@ -47,6 +47,16 @@ GroupRoutes.define do
         event = Event.create(create_event.attributes)
         group.events << event
         res.redirect "/groups/#{group.id}/welcome"
+      else
+        p create_event.errors
+
+        render('create-event', {
+          errors: create_event.errors,
+          time: create_event.time,
+          length: create_event.length,
+          location: create_event.location,
+          group_id: group.id,
+        })
       end
     end
   end

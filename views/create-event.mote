@@ -4,7 +4,7 @@
   % if errors.has_key? :time
   <div class='validation-error'>
     % errors[:time].each do |error|
-    {{ app.t("errors.#{time}") }}
+    {{ app.t("errors.#{error}") }}
     % end
   </div>
   % end
@@ -16,7 +16,7 @@
   % if errors.has_key? :length
   <div class='validation-error'>
     % errors[:length].each do |error|
-    {{ app.t("errors.#{length}") }}
+    {{ app.t("errors.#{error}") }}
     % end
   </div>
   % end
@@ -28,7 +28,7 @@
   % if errors.has_key? :location
   <div class='validation-error'>
     % errors[:location].each do |error|
-    {{ app.t("errors.#{location}") }}
+    {{ app.t("errors.#{error}") }}
     % end
   </div>
   % end
