@@ -15,6 +15,7 @@ welcome:
   events_table: "Nächste Events"
   when: "Wann?"
   where: "Wo?"
+  no_events: "Aktuell sind keine Events geplant"
 manage-group:
   title: "Gruppenverwaltung"
   manage-players: "Spieler verwalten"

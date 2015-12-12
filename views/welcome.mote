@@ -3,6 +3,9 @@
 
 <h2>{{ app.t('welcome.events_table') }}</h2>
 
+% if events.empty?
+<p id="events">{{ app.t('welcome.no_events') }}</p>
+% else
 <table id="events">
   <tr>
     <th>{{ app.t('welcome.when') }}</th>
@@ -16,6 +19,7 @@
   </tr>
   % end
 </table>
+% end
 
 % if app.current_user.game_master_for? app.group
 <a href="/groups/{{group_id}}/events/new">{{ app.t('welcome.create_event') }}</a>
