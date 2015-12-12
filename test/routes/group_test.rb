@@ -34,7 +34,7 @@ scope do
     fill_in 'location', with: 'Pub'
     click_button 'Termin erstellen'
 
-    within '#events tr:first-child' do
+    within '#events tr:nth-child(2)' do
       assert has_content? '01.04.2016'
       assert has_content? 'Afternoon'
       assert has_content? 'Pub'
