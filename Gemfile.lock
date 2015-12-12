@@ -13,8 +13,8 @@ GEM
       rack
     cutest (1.2.3)
       clap
-    daemons (1.1.9)
-    eventmachine (1.0.4)
+    daemons (1.2.3)
+    eventmachine (1.0.8)
     fat (1.0.0)
     hache (1.1.0)
     hiredis (0.6.0)
@@ -57,9 +57,9 @@ GEM
       rack (>= 1.0)
     stal (0.1.0)
       redic
-    thin (1.6.3)
+    thin (1.6.4)
       daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0)
+      eventmachine (~> 1.0, >= 1.0.4)
       rack (~> 1.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
