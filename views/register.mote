@@ -3,6 +3,8 @@
     <img src="/img/karfunkel.svg" alt="Logo Image">
     <h1>{{ app.t('register.title') }}</h1>
     <form action='/register' method='post'>
+      {{! app.csrf.form_tag }}
+
       % if errors.has_key? :email
       <div class='validation-error'>
         % errors[:email].each do |error|

@@ -41,8 +41,6 @@ GEM
       redic
     osth (1.3.0)
     rack (1.6.4)
-    rack-protection (1.5.3)
-      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     redic (1.1.1)
@@ -76,7 +74,6 @@ DEPENDENCIES
   ohm-contrib
   ost
   osth
-  rack-protection
   sass
   scrivener
   scrivener-contrib

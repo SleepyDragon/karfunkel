@@ -2,6 +2,8 @@
 
 <h2>{{ app.t('manage-group.manage-players') }}</h2>
 <form action='/groups/{{ app.group.id }}/manage' method='post'>
+  {{! app.csrf.form_tag }}
+
   <div class='fields'>
     <select name="players[]" multiple>
       % players.each do |player|

@@ -1,6 +1,8 @@
 <h1>{{ app.t('groups.events.create.title') }}</h1>
 
 <form action='/groups/{{ group_id }}/events' method='post'>
+  {{! app.csrf.form_tag }}
+
   % if errors.has_key? :time
   <div class='validation-error'>
     % errors[:time].each do |error|

@@ -1,4 +1,6 @@
 <form action='/groups' method='post'>
+  {{! app.csrf.form_tag }}
+
   % if errors.has_key? :name
   <div class='validation-error'>
     % errors[:name].each do |error|
