@@ -1,7 +1,7 @@
 class Event < Ohm::Model
   include Ohm::DataTypes
 
-  attribute :date, Type::Date
-  attribute :time
+  attribute :start_time, Type::Time
+  attribute :end_time, Type::Time
   attribute :location
 end

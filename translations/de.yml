@@ -13,9 +13,8 @@ welcome:
   title: "Willkommen"
   create_event: "Neuen Termin erstellen"
   events_table: "Nächste Events"
-  event_date: "Datum"
-  event_time: "Zeit"
-  event_location: "Ort"
+  when: "Wann?"
+  where: "Wo?"
 manage-group:
   title: "Gruppenverwaltung"
   manage-players: "Spieler verwalten"

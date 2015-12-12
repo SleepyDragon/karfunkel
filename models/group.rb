@@ -12,6 +12,6 @@ class Group < Ohm::Model
 
   # Events that are either today or in the future
   def upcoming_events
-    events.select { |event| event.date >= Date.today }
+    events.select { |event| event.start_time >= Date.today.to_time }
   end
 end

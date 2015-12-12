@@ -33,8 +33,8 @@ GroupRoutes.define do
       on get do
         render('create-event', {
           errors: {},
-          date: nil,
           time: nil,
+          length: nil,
           location: nil,
           group_id: group.id,
         })

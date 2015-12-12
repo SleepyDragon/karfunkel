@@ -25,7 +25,7 @@ end
 
 test 'Add an event to the group' do
   group = Group.create(name: 'Peergroup', system: 'dsa5', game_master: @game_master)
-  event = Event.create(date: Date.today, time: 'Afternoon', location: 'Internet')
+  event = Event.create(start_time: Time.now, end_time: Time.now + 3600, location: 'Internet')
   group.events << event
   assert_equal event, Group[group.id].events.first
 end

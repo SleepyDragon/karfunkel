@@ -5,15 +5,13 @@
 
 <table id="events">
   <tr>
-    <th>{{ app.t('welcome.event_date') }}</th>
-    <th>{{ app.t('welcome.event_time') }}</th>
-    <th>{{ app.t('welcome.event_location') }}</th>
+    <th>{{ app.t('welcome.when') }}</th>
+    <th>{{ app.t('welcome.where') }}</th>
   </tr>
 
   % events.each do |event|
   <tr>
-    <td>{{ event.date.strftime('%d.%m.%Y') }}</td>
-    <td>{{ event.time }}</td>
+    <td>{{ event.start_time.strftime('%d.%m.%Y %H:%M') }} – {{ event.end_time.strftime('%H:%M') }}</td>
     <td>{{ event.location }}</td>
   </tr>
   % end
