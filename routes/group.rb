@@ -6,7 +6,7 @@ GroupRoutes.define do
     res.status = 401 unless authenticated(User)
     render('welcome', {
       group_id: group.id,
-      events: group.events,
+      events: group.upcoming_events,
     })
   end
 

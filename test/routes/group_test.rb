@@ -40,4 +40,15 @@ scope do
       assert has_content? 'Pub'
     end
   end
+
+  test 'hide past events' do
+    @group.events << Event.create(date: '2050-01-01', time: '13:00', location: 'Future')
+    @group.events << Event.create(date: '2000-01-01', time: '13:00', location: 'Past')
+    visit "/groups/#{@group.id}/welcome"
+
+    within '#events' do
+      assert has_content? 'Future'
+      assert !(has_content? 'Past')
+    end
+  end
 end
