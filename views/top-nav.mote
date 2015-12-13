@@ -17,6 +17,8 @@
       <li class="nav-link"><a href="">{{ app.t('general.navigation.settings') }}</a></li>
       <li class="nav-link">
         <form action='/logout' method='post'>
+          {{! app.csrf.form_tag }}
+
           <input value="{{ app.t('general.navigation.logout') }}" type="submit">
         </form>
       </li>
